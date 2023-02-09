@@ -3,7 +3,10 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 01a7a003974b620984726b0b9a6ba126ec83fea2
 
 export default {
   name: 'App',
