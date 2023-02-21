@@ -8,16 +8,8 @@
 import { ref } from 'vue';
 
 export default {
-  data(){
-    return{
-      eng: "---",
-      spn: "--",
-    }
-  },
-  
   setup() {
     const testing = ref(null);
-
     const makeApiRequest = () => {
 
       var axios = require('axios');
