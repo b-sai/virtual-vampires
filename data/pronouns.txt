@@ -1,0 +1,6 @@
+I,I
+he,él
+she,ella
+they,ellos
+them,a ellos
+we,nosotros
