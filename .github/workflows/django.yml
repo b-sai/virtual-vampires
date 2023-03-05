@@ -27,7 +27,7 @@ jobs:
         pip install -r requirements.txt
     - name: Set Env
       run: |
-        echo "${{ secrets.DJANGO_SECRET_KEY2 }}" > _backend/_backend/secrets.py
+        echo "${{ secrets.DJANGO_SECRET_KEY2 }}" | base64 -d > _backend/_backend/secrets.py
 
     - name: Run Tests
       run: |
