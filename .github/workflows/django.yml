@@ -27,4 +27,5 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
+        echo "${{ secrets.django_secret_key }}" > _backend/_backend/secrets.py
         python _backend/manage.py test
