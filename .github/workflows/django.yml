@@ -31,5 +31,4 @@ jobs:
 
     - name: Run Tests
       run: |
-        echo "${{ secrets.DJANGO_SECRET_KEY }}" > _backend/_backend/secrets.py
         python _backend/manage.py test
