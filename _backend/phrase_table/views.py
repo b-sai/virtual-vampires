@@ -4,8 +4,8 @@ import random
 
 # Create your views here.
 from django.shortcuts import render
-from .models import MyVerb, Pronoun
-from .serializer import VerbSerializer, PronounSerializer
+from phrase_table.models import MyVerb, Pronoun
+from phrase_table.serializer import VerbSerializer, PronounSerializer
 
 from rest_framework import viewsets
 from rest_framework.authentication import BasicAuthentication

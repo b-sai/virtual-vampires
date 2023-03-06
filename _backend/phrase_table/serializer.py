@@ -1,6 +1,6 @@
 # from msilib.schema import Verb
 from rest_framework import serializers
-from .models import MyVerb, Pronoun
+from phrase_table.models import MyVerb, Pronoun
 
 
 class VerbSerializer(serializers.ModelSerializer):
