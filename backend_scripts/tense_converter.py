@@ -7,18 +7,29 @@ df = pd.read_csv("data/dict.tsv", header=None, sep="\t")
 
 verbs = df[1].tolist()
 
-print(verbs)
+# print(verbs)
 
-def to_past(verb):
+pt_exc = pd.read_csv("data/past_tense_exceptions.csv")
+p_part_exc = pd.read_csv("data/irregular_verbs_past_participle.csv")
+
+
+def df_to_dict(df):
+    return dict(zip(df.iloc[:,0], df.iloc[:,1]))
+
+pt_exc =df_to_dict(pt_exc)
+p_part_exc = df_to_dict(p_part_exc)
+
+
+def to_past(verb, exc):
     if len(verb.split(" ")) > 1:
-        return to_past(verb.split(" ")[0]) + " " + " ".join(verb.split(" ")[1:])
+        return to_past(verb.split(" ")[0], exc) + " " + " ".join(verb.split(" ")[1:])
     if verb.startswith("be "):
         return verb.replace("be ", "was ")
     if verb.startswith("put on"):
         return verb
 
-    if verb in tense_exceptions:
-        return tense_exceptions[verb]
+    if verb in exc:
+        return exc[verb]
     if verb.endswith("e"):
         return verb + "d"
     elif verb.endswith("y"):
@@ -32,9 +43,9 @@ def to_past(verb):
 def to_future(verb):
     return "will " + verb
 
-def get_past_participle(verb):
-    if verb in participle_exceptions:
-        return participle_exceptions[verb]
+def get_past_participle(verb, exc):
+    if verb in exc:
+        return exc[verb]
     elif verb.endswith("e"):
         return verb + "d"
     elif len(verb) > 2 and verb.endswith("y") and verb[-2] not in "aeiou":
@@ -43,63 +54,17 @@ def get_past_participle(verb):
         return verb+"ed"
     
         
+def to_past_perfect(verb, exc):
+    if verb.startswith("be "):
+        return "had been " + verb[3:]
+    elif len(verb.split(" ")) > 1:
+        return "had " + get_past_participle(verb.split(" ")[0], exc) + " " + " ".join(verb.split(" ")[1:])
+    return "had " + get_past_participle(verb, exc)
 
-# build a dictionary of exceptions when converting to past tense
-tense_exceptions = {
-    "go": "went",
-    "come": "came",
-    "do": "did",
-    "have": "had",
-    "be": "was",
-    "see": "saw",
-    "make": "made",
-    "take": "took",
-    "get": "got",
-    "know": "knew",
-    "think": "thought",
-    "say": "said",
-    "tell": "told",
-    "see": "saw",
-    "come": "came",
-    "give": "gave",
-    "find": "found",
-    "tell": "told",
-    "feel": "felt",
-    "fall": "fell",
-    "need": "needed",
-    "leave": "left",
-    "become": "became",
-    "begin": "began",
-    "hear": "heard",
-    "run": "ran",
-    "hold": "held",
-    "bring": "brought",
-    "write": "wrote",
-    "sit": "sat",
-    "stand": "stood",
-    "lose": "lost",
-    "pay": "paid",
-    "meet": "met",
-    "set": "set",
-    "lead": "led",
-    "understand": "understood",
-    "speak": "spoke",
-    "read": "read",
-    "grow": "grew",
-    "win": "won",
-    "add": "added",
-    "clad": "clad",
-    "shred": "shredded",
-    "build": "built",
-    "hold": "held",
-    "yield": "yielded",
-    "end": "ended",
-    "bend": "bent",
-    "send": "sent",
-    "bid": "bidded",
 
-}
+# for verb in verbs:
+#     past_verb = to_past(verb, pt_exc)
+#     print(f"{verb:<20} | {past_verb:<20} | {to_future(verb):<20}| {to_past_perfect(verb, p_part_exc):<20}")
+    
 
-for verb in verbs:
-    past_verb = to_past(verb)
-    print(f"{verb:<20} | {past_verb:<20} | {to_future(verb):<20}")
+
