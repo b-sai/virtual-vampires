@@ -43,4 +43,4 @@ jobs:
     - name: Launch Django server
       run: cd _backend && python manage.py runserver &
     - name: Run Cypress tests
-      run: cd ../duolange-frontend && npx cypress run
+      run: cd ../duolango-frontend && npx cypress run
