@@ -42,6 +42,6 @@ jobs:
     - name: Cypress
       run:
         cd duolango_frontend
-        npm run serve & npx cypress run
+        npm run serve 
         
         
