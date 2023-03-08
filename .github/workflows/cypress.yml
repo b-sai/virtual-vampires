@@ -35,6 +35,8 @@ jobs:
     - name: Set Env
       run: |
         echo "${{ secrets.DJANGO_SECRET_KEY2 }}" | base64 -d > _backend/_backend/secrets.py
+    - name: Print PATH
+      run: echo $PATH
     - name: Open Servers and Run
       run: |
         cd _backend
