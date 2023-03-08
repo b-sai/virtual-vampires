@@ -1,5 +1,5 @@
 
-name: Django CI
+name: Cypress CI
 
 on:
   push:
@@ -41,6 +41,7 @@ jobs:
         python manage.py 
     - name: Cypress
       run:
+        cd duolango_frontend
         npm run serve & npx cypress run
         
         
