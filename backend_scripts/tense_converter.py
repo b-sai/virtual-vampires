@@ -20,17 +20,20 @@ pt_exc =df_to_dict(pt_exc)
 p_part_exc = df_to_dict(p_part_exc)
 
 
-def to_past(verb, exc):
+def to_past(verb, exc, is_neg):
+    if is_neg:
+        return "did not " + verb
+
     if len(verb.split(" ")) > 1:
-        return to_past(verb.split(" ")[0], exc) + " " + " ".join(verb.split(" ")[1:])
-    if verb.startswith("be "):
+        return to_past(verb.split(" ")[0], exc, is_neg) + " " + " ".join(verb.split(" ")[1:])
+    elif verb.startswith("be "):
         return verb.replace("be ", "was ")
-    if verb.startswith("put on"):
+    elif verb.startswith("put on"):
         return verb
 
     if verb in exc:
         return exc[verb]
-    if verb.endswith("e"):
+    elif verb.endswith("e"):
         return verb + "d"
     elif verb.endswith("y"):
         return verb[:-1] + "ied"
@@ -38,10 +41,19 @@ def to_past(verb, exc):
         return verb[:-1] + "t"
     else:
         return verb+"ed"
-    
-    
-def to_future(verb):
-    return "will " + verb
+
+
+def to_present(verb, is_neg):
+    if is_neg:
+        return "do not " + verb
+    return verb
+def to_future(verb, is_neg):
+    if is_neg:
+        _not = " not"
+    else:
+        _not = ""
+
+    return f"will{_not} " + verb
 
 def get_past_participle(verb, exc):
     if verb in exc:
@@ -54,12 +66,17 @@ def get_past_participle(verb, exc):
         return verb+"ed"
     
         
-def to_past_perfect(verb, exc):
+def to_past_perfect(verb, exc, is_neg):
+    if is_neg:
+        _not = " not" #using _not to prevent name clash with python's not keyword
+    else:
+        _not = ""
+        
     if verb.startswith("be "):
-        return "had been " + verb[3:]
+        return f"have{_not} been " + verb[3:]
     elif len(verb.split(" ")) > 1:
-        return "had " + get_past_participle(verb.split(" ")[0], exc) + " " + " ".join(verb.split(" ")[1:])
-    return "had " + get_past_participle(verb, exc)
+        return f"have{_not} " + get_past_participle(verb.split(" ")[0], exc) + " " + " ".join(verb.split(" ")[1:])
+    return f"have{_not} " + get_past_participle(verb, exc)
 
 
 # for verb in verbs:
