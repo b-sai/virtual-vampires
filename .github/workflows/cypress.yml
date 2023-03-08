@@ -38,24 +38,10 @@ jobs:
         npm install
         npm run serve
 
-    - name: Wait for Vue server to start
-      run: |
-        while true; do
-          curl --head --fail http://localhost:8080 && break
-          sleep 1
-        done
-
     - name: Start Django server
       run: |
         cd _backend
         python manage.py runserver
-
-    - name: Wait for Django server to start
-      run: |
-        while true; do
-          curl --head --fail http://localhost:8000 && break
-          sleep 1
-        done
 
     - name: Run Cypress tests
       uses: cypress-io/github-action@v2
