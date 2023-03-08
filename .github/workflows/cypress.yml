@@ -41,7 +41,8 @@ jobs:
     - name: Build and start backend
       run: |
         cd _backend && python manage.py runserver & 
-    - name: Build frontend    
+    - name: Build frontend 
+      run: |
         cd ../duolango-frontend && npm run serve &
         wait-for http://localhost:8000 -t 300 &
     - name: Run Cypress
