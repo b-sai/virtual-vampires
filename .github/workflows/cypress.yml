@@ -41,9 +41,9 @@ jobs:
         python manage.py 
     - name: Open File
       run:
-        cd duolango-frontend
+        cd ../duolango-frontend
     - name: Run Cypress and Serve
       run:
-        cd duolango-frontend & npm run serve & npx cypress run
+        npm run serve & npx cypress run
         
         
