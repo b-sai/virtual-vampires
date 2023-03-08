@@ -11,43 +11,36 @@ jobs:
 
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 6
       matrix:
         python-version: [3.8]
 
     steps:
     - uses: actions/checkout@v3
-
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+    - name: Install Cypress
+      run: npm install cypress
+    - name: Install Vue
+      run: npm install -g @vue/cli
+    - name: Install dependencies for Vue app
+      run: cd duolango-frontend && npm install
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-
-    - name: Install dependencies
+    - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-
     - name: Set Env
       run: |
         echo "${{ secrets.DJANGO_SECRET_KEY2 }}" | base64 -d > _backend/_backend/secrets.py
-
-    - name: Start Vue server
-      run: |
-        cd duolango-frontend
-        npm install -g @vue/cli
-        npm install
-        npm run serve
-
-    - name: Start Django server
-      run: |
-        cd _backend
-        python manage.py runserver
-
+    - name: Launch Vue server
+      run: cd duolango-frontend && npm run serve &
+    - name: Launch Django server
+      run: cd _backend && python manage.py runserver &
     - name: Run Cypress tests
-      uses: cypress-io/github-action@v2
-      with:
-        browser: chrome
-        start: npm run serve
-      env:
-        CYPRESS_baseUrl: http://localhost:8080
-
+      run: npx cypress run
