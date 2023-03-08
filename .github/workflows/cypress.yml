@@ -1,3 +1,4 @@
+
 name: Cypress CI
 
 on:
@@ -16,7 +17,7 @@ jobs:
         python-version: [3.8]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Install Node.js
       uses: actions/setup-node@v2
       with:
@@ -28,7 +29,7 @@ jobs:
     - name: Install dependencies for Vue app
       run: cd duolango-frontend && npm install
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
@@ -38,12 +39,9 @@ jobs:
     - name: Set Env
       run: |
         echo "${{ secrets.DJANGO_SECRET_KEY2 }}" | base64 -d > _backend/_backend/secrets.py
-    - name: Build and start backend
-      run: |
-        cd _backend && python manage.py runserver & 
-    - name: Build frontend 
-      run: |
-        cd ../duolango-frontend && npm run serve &
-        wait-for http://localhost:8000 -t 300 &
-    - name: Run Cypress
-      run: npx cypress run
+    - name: Launch Django server
+      run: cd _backend && python manage.py runserver &
+    - name: Launch Vue server
+      run: cd duolango-frontend && npm run serve &
+    - name: Run Cypress tests
+      run: cd duolango-frontend && npx cypress run
