@@ -40,7 +40,6 @@ jobs:
         cd _backend
         python manage.py 
         cd ../duolango-frontend
-        npm run serve 
-        npx cypress run
+        npm run serve & npx cypress run
         
         
