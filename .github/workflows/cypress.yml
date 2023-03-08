@@ -35,15 +35,12 @@ jobs:
     - name: Set Env
       run: |
         echo "${{ secrets.DJANGO_SECRET_KEY2 }}" | base64 -d > _backend/_backend/secrets.py
-    - name: Open Backend Server
+    - name: Open Servers and Run
       run: |
         cd _backend
         python manage.py 
-    - name: Open File
-      run:
         cd ../duolango-frontend
-    - name: Run Cypress and Serve
-      run:
-        npm run serve & npx cypress run
+        npm run serve 
+        npx cypress run
         
         
