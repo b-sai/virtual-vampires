@@ -24,6 +24,8 @@ jobs:
         node-version: '14.x'
     - name: Install Cypress
       run: npm install cypress
+    - name: Install Vue
+      run: npm install -g @vue/cli
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
       with:
