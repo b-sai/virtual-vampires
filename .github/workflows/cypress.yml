@@ -24,7 +24,9 @@ jobs:
     - name: Install Cypress
       run: npm install cypress
     - name: Install Vue
-      run: npm install @vue/cli
+      run: npm install -g @vue/cli
+    - name: Install dependencies for Vue app
+      run: cd duolango-frontend && npm install
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
       with:
