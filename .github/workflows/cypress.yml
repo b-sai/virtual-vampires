@@ -1,3 +1,4 @@
+
 name: Cypress CI
 
 on:
@@ -38,9 +39,9 @@ jobs:
     - name: Set Env
       run: |
         echo "${{ secrets.DJANGO_SECRET_KEY2 }}" | base64 -d > _backend/_backend/secrets.py
-    - name: Open Servers and Run
-      run: |
-        cd _backend
-        python manage.py 
-        cd ../duolango-frontend
-        npm run serve & npx cypress run
+    - name: Launch Django server
+      run: cd _backend && python manage.py runserver &
+    - name: Launch Vue server
+      run: cd duolango-frontend && npm run serve &
+    - name: Run Cypress tests
+      run: cd duolango-frontend && npx cypress run
