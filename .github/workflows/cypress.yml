@@ -24,6 +24,10 @@ jobs:
         node-version: '14.x'
     - name: Install Cypress
       run: npm install cypress
+    - name: Install Vue
+      run: |
+        npm install -g @vue/cli
+        echo 'export PATH="$PATH:/usr/local/bin"' >> $HOME/.bashrc
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
       with:
@@ -35,14 +39,12 @@ jobs:
     - name: Set Env
       run: |
         echo "${{ secrets.DJANGO_SECRET_KEY2 }}" | base64 -d > _backend/_backend/secrets.py
-    - name: Print PATH
-      run: echo $PATH
     - name: Open Servers and Run
       run: |
         cd _backend
         python manage.py 
         cd ../duolango-frontend
-        npm install -g @vue/cli
         npm run serve & npx cypress run
+
         
         
