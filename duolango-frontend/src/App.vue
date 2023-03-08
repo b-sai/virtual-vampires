@@ -4,7 +4,8 @@
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/game1">Game1</router-link> |
-      <router-link to="/login">Log In</router-link>
+      <router-link to="/game2">Game2</router-link> |
+      <router-link to="/game3">Game3</router-link>
     </nav>
   </header>
   <router-view></router-view>
