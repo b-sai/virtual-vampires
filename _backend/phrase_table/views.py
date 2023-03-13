@@ -30,6 +30,8 @@ class PronounViewSet(viewsets.ModelViewSet):
  
 def get_random_verb_pair(request):
     items = list(MyVerb.objects.all())
+    if len(items) > 0:
+        random_item = random.choice(items)
 
-    random_item = random.choice(items)
-    return JsonResponse({'en': random_item.english, 'sp': random_item.spanish})
+        return JsonResponse({'en': random_item.english, 'sp': random_item.spanish})
+    return JsonResponse({'en': 'Null', 'sp': 'Null'})
