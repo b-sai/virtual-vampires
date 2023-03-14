@@ -5,15 +5,7 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCwGC1fvk2vmtNIZ-wyzS8WDPx5g9xA83s",
-  authDomain: "worse-duolingo.firebaseapp.com",
-  databaseURL: "https://worse-duolingo-default-rtdb.firebaseio.com",
-  projectId: "worse-duolingo",
-  storageBucket: "worse-duolingo.appspot.com",
-  messagingSenderId: "562797851309",
-  appId: "1:562797851309:web:d9d34341f2cd6e4f400c24"
-};
+// add const firebaseConfig from firebase project
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
