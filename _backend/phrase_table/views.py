@@ -4,8 +4,8 @@ import random
 
 # Create your views here.
 from django.shortcuts import render
-from .models import MyVerb, Pronoun
-from .serializer import VerbSerializer, PronounSerializer
+from phrase_table.models import MyVerb, Pronoun
+from phrase_table.serializer import VerbSerializer, PronounSerializer
 
 from rest_framework import viewsets
 from rest_framework.authentication import BasicAuthentication
@@ -30,6 +30,8 @@ class PronounViewSet(viewsets.ModelViewSet):
  
 def get_random_verb_pair(request):
     items = list(MyVerb.objects.all())
+    if len(items) > 0:
+        random_item = random.choice(items)
 
-    random_item = random.choice(items)
-    return JsonResponse({'en': random_item.english, 'sp': random_item.spanish})
+        return JsonResponse({'en': random_item.english, 'sp': random_item.spanish})
+    return JsonResponse({'en': 'Null', 'sp': 'Null'})
