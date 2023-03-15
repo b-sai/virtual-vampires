@@ -1,13 +1,15 @@
 import unittest
-import test_english
+from . import test_english
 
 
 def suite():
-    test_suite = unittest.TestSuite()
-    test_suite.addTest(unittest.makeSuite(test_english.TestEnglish))
+    loader = unittest.TestLoader()
+    suite = unittest.TestSuite()
+    suite.addTests(loader.loadTestsFromModule(test_english.TestEnglish1()))
+
     # add other test modules here
-    return test_suite
+    return suite
 
 
 if __name__ == '__main__':
-    unittest.main(defaultTest='suite')
+    unittest.main(defaultTest=suite())
