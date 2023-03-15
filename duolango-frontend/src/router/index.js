@@ -5,17 +5,39 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: home
+    component: home,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/game1',
     name: 'game1',
-    component: () => import(/* webpackChunkName: "about" */ '../views/game1.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/game1.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/game2',
+    name: 'game2',
+    component: () => import(/* webpackChunkName: "about" */ '../views/game2.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/game3',
+    name: 'game3',
+    component: () => import(/* webpackChunkName: "about" */ '../views/game3.vue'),
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/login',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "about" */ '../views/login.vue')
+    name: 'Login',
+    component: () => import('../views/login.vue')
   }
 
 ]
