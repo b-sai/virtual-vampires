@@ -3,8 +3,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/game1">Game1</router-link> |
       <router-link to="/game2">Game2</router-link> |
-      <router-link to="/game3">Game3</router-link>
-      <button @click="$store.dispatch('logout')">Logout</button>
+      <router-link to="/game3">Game3</router-link> |
+      <button id="buttons" @click="$store.dispatch('logout')">Logout</button>
     </div>
   <router-view/>
 </template>
@@ -33,6 +33,16 @@ export default {
 
 
 <style>
+  #buttons {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
