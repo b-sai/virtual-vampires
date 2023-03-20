@@ -3,13 +3,14 @@ from . import test_english
 
 
 def suite():
-    loader = unittest.TestLoader()
-    suite = unittest.TestSuite()
-    suite.addTests(loader.loadTestsFromModule(test_english.TestEnglish1()))
+    test_loader = unittest.TestLoader()
+    test_names = ['backend_scripts.test_converters.test_english']
+
+    test_suite = test_loader.loadTestsFromNames(test_names)
 
     # add other test modules here
-    return suite
+    return test_suite
 
 
 if __name__ == '__main__':
-    unittest.main(defaultTest=suite())
+    unittest.TextTestRunner().run(suite())

@@ -92,6 +92,3 @@ for line in open("data/testdist.tsv", "r"):
     verb = language_converter("Swahili", "English", verb, df)
     res = sentence_generator(feats, verb=verb, input_lang="swahili")
     print(f"{feats:<25} | {res:<25} | {eng:<25}| {res == eng:<25}")
-
-
-

@@ -70,3 +70,42 @@ class EnglishConverter(TenseConverter):
     def to_imperfect(self, verb):
         # does not exist in english
         return None
+    
+    def generate_sentence(self, features):
+        # TODO
+        feats = features.split("+")
+
+        verb = feats[-1]
+
+        is_neg = False
+        result = ""
+        if "IMP" in feats:
+            return verb
+
+        for feat in feats:
+
+            if feat == 'PAST':
+                result += " " + self.to_past(verb, is_neg)
+            elif feat == 'FUT':
+                result += " " + self.to_future(verb, is_neg)
+            elif feat == 'PERF':
+                result += " " + self.to_past_perfect(verb, is_neg)
+            elif feat == 'PRES':
+                result += " " + self.to_present(verb, is_neg)
+
+            elif feat == "1s":
+                result += "I"
+            elif feat == "2s":
+                result += "you"
+            elif feat == "3s":
+                result += "(s)he"
+            elif feat == "1p":
+                result += "we"
+            elif feat == "2p":
+                result += "you"
+            elif feat == "3p":
+                result += "they"
+            elif feat == "NEG":
+                is_neg = True
+
+        return result

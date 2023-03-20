@@ -6,24 +6,27 @@ class TenseConverter(ABC):
         super().__init__()
             
     @abstractmethod  
-    def to_past(**args):
+    def to_past(self, **args):
         pass
     
     @abstractmethod
-    def to_present(**args):
+    def to_present(self, **args):
         pass
     
     @abstractmethod
-    def to_future(**args):
+    def to_future(self, **args):
         pass
     
     @abstractmethod
-    def to_past_perfect(**args):
+    def to_past_perfect(self, **args):
         pass
 
     @abstractmethod
-    def to_imperfect(**args):
+    def to_imperfect(self, **args):
         pass
-
+    
+    @abstractmethod
+    def generate_sentence(self, **args):
+        pass
         
     
