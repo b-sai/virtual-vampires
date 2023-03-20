@@ -1,11 +1,12 @@
 <template>
-<div>
+<div >
   <header>
-    <nav>
+    <nav v-if="$store.state.user">
       <router-link to="/">Home</router-link> |
       <router-link to="/game1">Game1</router-link> |
       <router-link to="/game2">Game2</router-link> |
       <router-link to="/game3">Game3</router-link>
+      <button @click="$store.dispatch('logout')">Logout</button>
     </nav>
   </header>
   <router-view></router-view>
@@ -16,11 +17,22 @@
 <script>
 import { defineComponent } from 'vue';
 import router from './router';
+import { onBeforeMount } from 'vue'
+import {useStore} from 'vuex'
 
-export default defineComponent({
-  name: 'App',
-  router,
-});
+export default {
+  setup () {
+    const store = useStore()
+
+    onBeforeMount(() => {
+      store.dispatch('fetchUser')
+    })
+  }
+}
+// export default defineComponent({
+//   name: 'App',
+//   router,
+// });
 </script>
 
 
