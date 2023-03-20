@@ -35,6 +35,7 @@
   import {ref} from 'vue'
   import {useStore} from 'vuex'
   export default {
+    
       setup (){
           const login_form = ref({});
           const register_form = ref({});
@@ -56,6 +57,7 @@
   </script>
   
   <style>
+  
   .forms {
       display: flex;
       min-height: 100vh;
