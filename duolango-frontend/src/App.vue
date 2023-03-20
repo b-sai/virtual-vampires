@@ -1,16 +1,12 @@
 <template>
-<div >
-  <header>
-    <nav v-if="$store.state.user">
+    <div id="nav" v-if="$store.state.user">
       <router-link to="/">Home</router-link> |
       <router-link to="/game1">Game1</router-link> |
       <router-link to="/game2">Game2</router-link> |
       <router-link to="/game3">Game3</router-link>
       <button @click="$store.dispatch('logout')">Logout</button>
-    </nav>
-  </header>
-  <router-view></router-view>
-</div>
+    </div>
+  <router-view/>
 </template>
 
 
@@ -45,16 +41,16 @@ export default {
   color: #2c3e50;
 }
 
-nav {
+#nav {
   padding: 30px;
 }
 
-nav a {
+#nav a {
   font-weight: bold;
   color: #2c3e50;
 }
 
-nav a.router-link-exact-active {
+#nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
