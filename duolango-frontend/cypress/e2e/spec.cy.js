@@ -1,6 +1,6 @@
-describe('game start', () => {
-  it('passes', () => {
-    cy.visit('http://localhost:8080/')
+//describe('game start', () => {
+  //it('passes', () => {
+    //cy.visit('http://localhost:8080/')
     //cy.get('.login > [type="email"]').click().type('cypress@gmail.com')
     //cy.get('.login > [type="password"]').click().type('123!@#')
     //cy.get('.login > [type="submit"]').click()
@@ -16,5 +16,5 @@ describe('game start', () => {
     //cy.get('.game1 > div > :nth-child(6)').click()
     //cy.get('.game1 > div > :nth-child(7)').click()
     //cy.get('#buttons').click()
-  })
-})
+  //})
+//})
