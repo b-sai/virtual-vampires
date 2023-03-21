@@ -12,25 +12,25 @@ const routes = [
     }
   },
   {
-    path: '/game1',
-    name: 'game1',
-    component: () => import(/* webpackChunkName: "about" */ '../views/game1.vue'),
+    path: '/definer',
+    name: 'definer',
+    component: () => import(/* webpackChunkName: "about" */ '../views/definer.vue'),
     meta: {
       requiresAuth: true
     }
   },
   {
-    path: '/game2',
-    name: 'game2',
-    component: () => import(/* webpackChunkName: "about" */ '../views/game2.vue'),
+    path: '/tensify',
+    name: 'tensify',
+    component: () => import(/* webpackChunkName: "about" */ '../views/tensify.vue'),
     meta: {
       requiresAuth: true
     }
   },
   {
-    path: '/game3',
-    name: 'game3',
-    component: () => import(/* webpackChunkName: "about" */ '../views/game3.vue'),
+    path: '/puzzler',
+    name: 'puzzler',
+    component: () => import(/* webpackChunkName: "about" */ '../views/puzzler.vue'),
     meta: {
       requiresAuth: true
     }

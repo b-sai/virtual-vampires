@@ -7,6 +7,8 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // add const firebaseConfig from firebase project
 
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)

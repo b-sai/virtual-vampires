@@ -1,9 +1,9 @@
 <template>
     <div id="nav" v-if="$store.state.user">
       <router-link to="/">Home</router-link> |
-      <router-link to="/game1">Game1</router-link> |
-      <router-link to="/game2">Game2</router-link> |
-      <router-link to="/game3">Game3</router-link> |
+      <router-link to="/definer">Definer</router-link> |
+      <router-link to="/tensify">Tensify</router-link> |
+      <router-link to="/puzzler">Puzzler</router-link> |
       <button id="buttons" @click="$store.dispatch('logout')">Logout</button>
     </div>
   <router-view/>
