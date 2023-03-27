@@ -57,7 +57,7 @@ class EnglishConverter(TenseConverter):
             elif sp == "2s":
                 p_part = "are "
             elif sp == "2p":
-                p_part = "ye "
+                p_part = ""
             elif sp == "3s":
                 p_part = "is "
             elif sp == "3p":
@@ -89,17 +89,22 @@ class EnglishConverter(TenseConverter):
             return verb+"ed"
 
 
-    def to_past_perfect(self, verb, is_neg):
+    def to_past_perfect(self, verb, is_neg, sp):
         if is_neg:
             _not = " not"  # using _not to prevent name clash with python's not keyword
         else:
             _not = ""
+            
+        if sp == "3s":
+            prefix = "has"
+        else:
+            prefix = "have"
 
         if verb.startswith("be "):
-            return f"have{_not} been " + verb[3:]
+            return f"{prefix}{_not} been " + verb[3:]
         elif len(verb.split(" ")) > 1:
-            return f"have{_not} " + self.get_past_participle(verb.split(" ")[0]) + " " + " ".join(verb.split(" ")[1:])
-        return f"have{_not} " + self.get_past_participle(verb)
+            return f"{prefix}{_not} " + self.get_past_participle(verb.split(" ")[0]) + " " + " ".join(verb.split(" ")[1:])
+        return f"{prefix}{_not} " + self.get_past_participle(verb)
 
     def to_imperfect(self, verb):
         # does not exist in english
@@ -149,7 +154,7 @@ class EnglishConverter(TenseConverter):
             elif feat == 'FUT':
                 result += " " + self.to_future(verb, is_neg)
             elif feat == 'PERF':
-                result += " " + self.to_past_perfect(verb, is_neg)
+                result += " " + self.to_past_perfect(verb, is_neg, sp)
             elif feat == 'PRES':
                 result += " " + self.to_present(verb, is_neg, sp)
 
@@ -160,7 +165,7 @@ class EnglishConverter(TenseConverter):
                 result += "we"
                 sp = feat
             elif feat == "2p":
-                result += "you"
+                result += "ye"
                 sp = feat
             elif feat == "3p":
                 result += "they"
