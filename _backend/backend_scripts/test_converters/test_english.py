@@ -1,7 +1,7 @@
 import unittest
-from backend_scripts.converters.english import EnglishConverter
+from _backend.backend_scripts.converters.english import EnglishConverter
 import pandas as pd
-from backend_scripts.utils import exc_to_dict
+from _backend.backend_scripts.utils import exc_to_dict
 
 class TestEnglish(unittest.TestCase):
     def test_demo(self):
