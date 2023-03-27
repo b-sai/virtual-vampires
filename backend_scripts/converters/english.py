@@ -8,14 +8,21 @@ class EnglishConverter(TenseConverter):
         self.past_tense_exc = past_tense_exc
         self.past_participle_exc = past_participle_exc
         
-    def to_past(self, verb, is_neg):
+    def to_past(self, verb, is_neg, sp):
         if is_neg:
             return "did not " + verb
 
+            
+        if verb == "be":
+            if sp in ["1s", "3s"]:
+                # I/(s)he was happy
+                return "was"
+            else:
+                # They were happy
+                return "were"
+
         if len(verb.split(" ")) > 1:
-            return self.to_past(verb.split(" ")[0], is_neg) + " " + " ".join(verb.split(" ")[1:])
-        elif verb.startswith("be "):
-            return verb.replace("be ", "was ")
+            return self.to_past(verb.split(" ")[0], is_neg, sp) + " " + " ".join(verb.split(" ")[1:])
         elif verb.startswith("put on"):
             return verb
 
@@ -150,7 +157,7 @@ class EnglishConverter(TenseConverter):
         for feat in feats:
 
             if feat == 'PAST':
-                result += " " + self.to_past(verb, is_neg)
+                result += " " + self.to_past(verb, is_neg, sp)
             elif feat == 'FUT':
                 result += " " + self.to_future(verb, is_neg)
             elif feat == 'PERF':
