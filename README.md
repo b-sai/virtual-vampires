@@ -1,2 +1,3 @@
 # virtual-vampires
-duolingo, but worse
+duolingo, but much worse
+
