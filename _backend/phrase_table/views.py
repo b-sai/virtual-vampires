@@ -11,6 +11,8 @@ from rest_framework import viewsets
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 
+from backend_scripts.converters.english import EnglishConverter
+from backend_scripts.utils import exc_to_dict
 import logging
 logger = logging.getLogger('django')
 
@@ -35,3 +37,17 @@ def get_random_verb_pair(request):
 
         return JsonResponse({'en': random_item.english, 'sp': random_item.spanish})
     return JsonResponse({'en': 'Null', 'sp': 'Null'})
+
+
+def get_random_english_sentence(request):
+    with open("data/test_english_sentences.tsv", "r") as f:
+        en_feats = f.read().splitlines()
+    en_feats = [feats.strip().split("\t")[0] for feats in en_feats]
+    past_tense_exc = exc_to_dict("data/past_tense_exceptions.csv")
+    past_part_exc = exc_to_dict("data/irregular_verbs_past_participle.csv")
+
+    english_converter = EnglishConverter(past_tense_exc, past_part_exc)
+
+    random.shuffle(en_feats)
+    rand_en_sentence = english_converter.generate_sentence(en_feats[0])
+    return JsonResponse({'en':rand_en_sentence})

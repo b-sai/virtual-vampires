@@ -23,5 +23,6 @@ router.register(r"verb", VerbViewSet)
 router.register(r"pronoun", PronounViewSet)
 urlpatterns = [
     path("", include(router.urls)),
-    path("rand_elem/", views.get_random_verb_pair)
+    path("rand_elem/", views.get_random_verb_pair),
+    path("rand_en_sent/", views.get_random_english_sentence)
 ]

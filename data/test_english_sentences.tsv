@@ -1,0 +1,231 @@
+NEG+1p+PRES+be able	we are not able
+2s+IMP+come	come
+2p+IMP+come	come
+2s+IMP+bring	bring
+2p+IMP+bring	bring
+2s+IMP+drink	drink
+2p+IMP+drink	drink
+2s+IMP+look	look
+2p+IMP+look	look
+2s+IMP+help	help
+2p+IMP+help	help
+2s+IMP+answer	answer
+2p+IMP+answer	answer
+2s+IMP+learn	learn
+2p+IMP+learn	learn
+1s+PRES+eat	I eat
+NEG+1s+PRES+eat	I do not eat
+2s+PRES+write	you write
+NEG+2s+PRES+write	you do not write
+1p+PRES+answer	we answer
+NEG+1p+PRES+answer	we do not answer
+1s+PAST+eat	I ate
+NEG+1s+PAST+eat	I did not eat
+2s+PAST+write	you wrote
+NEG+2s+PAST+write	you did not write
+1p+PAST+answer	we answered
+NEG+1p+PAST+answer	we did not answer
+1s+PERF+eat	I have eaten
+NEG+1s+PERF+eat	I have not eaten
+2s+PERF+write	you have written
+NEG+2s+PERF+write	you have not written
+1p+PERF+answer	we have answered
+NEG+1p+PERF+answer	we have not answered
+1s+FUT+eat	I will eat
+NEG+1s+FUT+eat	I will not eat
+2s+FUT+write	you will write
+NEG+2s+FUT+write	you will not write
+1p+FUT+answer	we will answer
+NEG+1p+FUT+answer	we will not answer
+NEG+3p+PRES+be suitable	they are not suitable
+1s+PAST+open	I opened
+1s+PAST+close	I closed
+NEG+1s+PERF+start	I have not started
+1s+PERF+start	I have started
+1s+PRES+mean	I mean
+2s+PRES+say	you say
+3p+PAST+say	they said
+2s+PAST+say	you said
+2s+PRES+speak	you speak
+2s+IMP+speak	speak
+NEG+1s+PRES+speak	I do not speak
+2s+PRES+understand	you understand
+NEG+1s+PRES+understand	I do not understand
+2s+PERF+understand	you have understood
+1s+PAST+converse	I conversed
+1p+PRES+request	we request
+2s+IMP+write	write
+2s+PRES+recommend	you recommend
+2s+IMP+confirm	confirm
+1s+PAST+read	I read
+1s+PRES+be named	I am named
+3s+PRES+be named	(s)he is named
+1s+PRES+come from	I come from
+2s+PRES+come from	you come from
+1s+PERF+come from	I have come from
+3p+PERF+live	they have lived
+1p+PRES+live	we live
+NEG+1p+PRES+live	we do not live
+1p+PRES+stay	we stay
+NEG+1p+PRES+stay	we do not stay
+NEG+1s+FUT+die	I will not die
+2s+PERF+be born	you have been born
+1s+PERF+be born	I have been born
+1s+PERF+subtract	I have subtracted
+1p+FUT+pay	we will pay
+1s+FUT+get	I will get
+1s+PAST+get	I got
+2s+PERF+bring	you have brought
+2s+IMP+take	take
+2s+IMP+put	put
+2s+PAST+put	you put
+1s+PAST+take	I took
+2s+IMP+pass	pass
+2s+PERF+receive	you have received
+1s+PRES+come	I come
+3s+PAST+come	(s)he came
+2s+PRES+go	you go
+1p+PRES+depart	we depart
+2s+IMP+depart	depart
+1p+FUT+return	we will return
+1s+FUT+return	I will return
+2s+PAST+visit	you visited
+2s+PRES+do	you do
+1p+PAST+arrive	we arrived
+1s+PERF+be lost	I have been lost
+NEG+1p+PERF+be lost	we have not been lost
+2s+IMP+turn	turn
+1p+PERF+arrive at	we have arrived at
+1s+PAST+run	I ran
+2s+PRES+sell	you sell
+2s+IMP+eat	eat
+1s+PRES+wash	I wash
+2s+IMP+turn off	turn off
+2s+IMP+turn on	turn on
+1s+PRES+make	I make
+2s+IMP+add	add
+2s+IMP+leave	leave
+1s+PAST+prepare	I prepared
+2s+PRES+mix	you mix
+1p+PRES+mix	we mix
+2s+IMP+boil	boil
+1s+PRES+boil	I boil
+2s+IMP+cut	cut
+1p+FUT+repair	we will repair
+1s+PAST+lose	I lost
+1s+PRES+look for	I look for
+NEG+1s+PRES+know	I do not know
+2s+PRES+know	you know
+1s+PRES+remember	I remember
+2s+IMP+remember	remember
+1s+PAST+remember	I remembered
+1s+PERF+forget	I have forgotten
+NEG+1s+PRES+forget	I do not forget
+1s+FUT+ask	I will ask
+1p+PRES+learn	we learn
+1p+PERF+learn	we have learned
+2s+PERF+be wrong	you have been wrong
+1s+PERF+be wrong	I have been wrong
+1s+PAST+think	I thought
+2s+PRES+think	you think
+2s+PRES+love	you love
+NEG+1s+PRES+love	I do not love
+2s+PERF+be full	you have been full
+1s+PERF+be full	I have been full
+2s+PERF+tire	you have tired
+1s+PRES+prefer	I prefer
+1s+PRES+fear	I fear
+3p+PRES+fear	they fear
+1s+PERF+be used to	I have been used to
+NEG+1s+PERF+be used to	I have not been used to
+2s+PERF+be used to	you have been used to
+1s+PRES+hate	I hate
+2s+PRES+listen	you listen
+NEG+1s+PAST+listen	I did not listen
+2s+PRES+hear	you hear
+1s+PAST+hear	I heard
+2s+IMP+look	look
+2s+IMP+wait	wait
+1s+PAST+wait	I waited
+2s+IMP+stop	stop
+2s+PERF+awaken	you have awakened
+3s+PERF+sleep	(s)he has slept
+2s+IMP+sleep	sleep
+1p+PRES+order	we order
+1s+PRES+hope	I hope
+3p+PRES+hope	they hope
+2s+PRES+plan	you plan
+1p+PRES+plan	we plan
+1p+FUT+be late	we will be late
+1s+PRES+watch	I watch
+1s+PAST+think	I thought
+1s+PRES+try	I try
+1p+PRES+argue	we argue
+3p+PRES+argue	they argue
+1p+FUT+play	we will play
+2s+PRES+agree	you agree
+3s+PRES+agree	(s)he agrees
+NEG+1s+PRES+agree	I do not agree
+2s+IMP+continue	continue
+1p+FUT+continue	we will continue
+2s+IMP+wear	wear
+1s+PERF+wear	I have worn
+3p+PERF+wear	they have worn
+2s+IMP+taste	taste
+2s+PRES+pray	you pray
+NEG+2s+PRES+need	you do not need
+1s+PAST+realize	I realized
+1p+PAST+decide	we decided
+3s+PAST+decide	(s)he decided
+1s+PAST+decide	I decided
+1p+FUT+share	we will share
+1p+FUT+share	we will share
+2s+IMP+sing	sing
+2p+IMP+laugh	laugh
+2s+PRES+laugh	you laugh
+2p+PRES+play	ye play
+2s+PERF+be happy	you have been happy
+1p+PAST+be happy	we were happy
+2s+PERF+be angry	you have been angry
+2s+IMP+cross	cross
+1s+PRES+be sick	I am sick
+3s+PRES+be sick	(s)he is sick
+3s+PAST+finish	(s)he finished
+2s+PERF+finish	you have finished
+1p+FUT+finish	we will finish
+2s+PRES+resemble	you resemble
+2s+PRES+improve	you improve
+2s+PERF+exchange	you have exchanged
+1s+PAST+kill	I killed
+3p+PRES+drive	they drive
+3p+PRES+plan	they plan
+1p+PRES+plan	we plan
+2s+PRES+be able	you are able
+3p+PRES+build	they build
+1s+PAST+be shocked	I was shocked
+3s+PRES+look great	(s)he looks great
+2s+PERF+look great	you have looked great
+3s+PAST+grow up	(s)he grew up
+3p+FUT+visit	they will visit
+1s+PRES+visit	I visit
+3p+FUT+close	they will close
+3s+PRES+cry	(s)he cries
+3p+FUT+steal	they will steal
+NEG+1s+PRES+believe	I do not believe
+1s+PRES+be required	I am required
+1s+FUT+think about	I will think about
+3s+PERF+put on weight	(s)he has put on weight
+1s+PERF+lose weight	I have lost weight
+1s+PAST+leave	I left
+1s+PRES+approach	I approach
+1p+PRES+approach	we approach
+3s+PRES+approach	(s)he approaches
+1s+PAST+fall	I fell
+NEG+3p+PRES+allow	they do not allow
+1p+PAST+rent	we rented
+2s+PRES+be named	you are named
+3p+PAST+die	they died
+2s+PRES+care	you care
+3s+PRES+study	(s)he studies
+3p+PRES+study	they study
+1s+PRES+wish	I wish

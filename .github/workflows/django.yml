@@ -29,7 +29,11 @@ jobs:
       run: |
         echo "${{ secrets.DJANGO_SECRET_KEY2 }}" | base64 -d > _backend/_backend/secrets.py
 
-    - name: Run Tests
+    - name: Run Django Tests
       run: |
         cd _backend
         python manage.py test phrase_table.tests
+
+    - name: Run Converter Tests
+      run: |
+        python -m  _backend.backend_scripts.test_converters.test_all
