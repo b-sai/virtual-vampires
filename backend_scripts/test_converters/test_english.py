@@ -19,7 +19,14 @@ class TestEnglish(unittest.TestCase):
             if res != english_sent:
                 print(f"{feats:<20} | {res:<20} | {english_sent:<20} | {res == english_sent:<20}")
             # print(f"{feats:<20} | {res:<20} | {english_sent:<20} | {res == english_sent:<20}")
+    # def test_one(self):
+    #     feats = "NEG+1p+PRES+be able"
+    #     past_tense_exc = exc_to_dict("data/past_tense_exceptions.csv")
+    #     past_part_exc = exc_to_dict("data/irregular_verbs_past_participle.csv")
 
+    #     english = EnglishConverter(past_tense_exc, past_part_exc)
+    #     res = english.generate_sentence(feats)
+    #     print(f"{feats:<20} | {res:<20}")
 
 if __name__ == '__main__':
     unittest.main()

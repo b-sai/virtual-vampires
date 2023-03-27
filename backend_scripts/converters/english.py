@@ -30,10 +30,44 @@ class EnglishConverter(TenseConverter):
         else:
             return verb+"ed"
 
-    def to_present(self,verb, is_neg):
+    def to_present(self,verb:str, is_neg:bool, sp: str):
+        """
+        p is plurality. If we have 2p, we want are, not do and so on
+        
+        """
+        
+        
+        if sp == "3s" and " " not in verb:
+            verb = self.get_plural(verb)
+        elif sp == "3s" and " " in verb:
+            # multiple words, need to convert only first word to plural
+            # put on weight -> puts on weight
+            verb = self.get_plural(verb.split(" ")[0]) + " " + " ".join(verb.split(" ")[1:])
+        
         if is_neg:
-            return "do not " + verb
-        return verb
+            p_part = "do "
+        else:
+            p_part = ""
+            
+        if verb.startswith("be "):
+            if sp == "1s":
+                p_part = "am "
+            elif sp == "1p":
+                p_part = "are "
+            elif sp == "2s":
+                p_part = "are "
+            elif sp == "2p":
+                p_part = "ye "
+            elif sp == "3s":
+                p_part = "is "
+            elif sp == "3p":
+                p_part = "are "
+            verb = verb[3:]
+        
+        if is_neg:
+
+            return f"{p_part}not {verb}"
+        return f"{p_part}{verb}"
 
     def to_future(self, verb, is_neg):
         if is_neg:
@@ -71,6 +105,28 @@ class EnglishConverter(TenseConverter):
         # does not exist in english
         return None
     
+    def to_s(self, verb:str, s: str):
+        s_part = ""
+        
+        if s.startswith("1"):
+            s_part = "I"
+        elif s.startswith("2"):
+            s_part = "you"
+        elif s.startswith("3"):
+            s_part = "(s)he"
+            
+        return s_part
+    
+    def get_plural(self, verb:str):
+        if verb == "be":
+            return "is"
+        if verb.endswith("y") and verb[-2] not in "aeiou":
+            return verb[:-1] + "ies"
+        elif verb.endswith(("s", "x", "z", "sh", "ch")):
+            return verb + "es"
+        else:
+            return verb + "s"
+
     def generate_sentence(self, features):
         # TODO
         feats = features.split("+")
@@ -81,6 +137,10 @@ class EnglishConverter(TenseConverter):
         result = ""
         if "IMP" in feats:
             return verb
+        
+        is_plural = False
+        
+        sp = ""
 
         for feat in feats:
 
@@ -91,20 +151,20 @@ class EnglishConverter(TenseConverter):
             elif feat == 'PERF':
                 result += " " + self.to_past_perfect(verb, is_neg)
             elif feat == 'PRES':
-                result += " " + self.to_present(verb, is_neg)
+                result += " " + self.to_present(verb, is_neg, sp)
 
-            elif feat == "1s":
-                result += "I"
-            elif feat == "2s":
-                result += "you"
-            elif feat == "3s":
-                result += "(s)he"
+            elif feat in ["1s", "2s", "3s"]:
+                result += self.to_s(verb, feat)
+                sp = feat
             elif feat == "1p":
                 result += "we"
+                sp = feat
             elif feat == "2p":
                 result += "you"
+                sp = feat
             elif feat == "3p":
                 result += "they"
+                sp = feat
             elif feat == "NEG":
                 is_neg = True
 
