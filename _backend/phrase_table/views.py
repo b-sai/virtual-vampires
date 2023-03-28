@@ -51,3 +51,16 @@ def get_random_english_sentence(request):
     random.shuffle(en_feats)
     rand_en_sentence = english_converter.generate_sentence(en_feats[0])
     return JsonResponse({'en':rand_en_sentence})
+
+def get_en_es_translation(request):
+    # Provide random sentence with proper translation.
+    # call random english sentence to get other incorrect translations
+    return JsonResponse({'en': 'I will jump', 'sp': 'yo voluntad saltar'.split(" ")})
+
+def get_es_right_verb(request):
+    # provide verb tense
+    return JsonResponse({'sentence': 'he ____',
+                         'verb': 'jump',
+                         'correct': 'jumped' ,
+                         'wrong': ['will run', 'eats', 'laughs']
+                         })

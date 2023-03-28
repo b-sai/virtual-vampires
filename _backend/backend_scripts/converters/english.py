@@ -140,7 +140,6 @@ class EnglishConverter(TenseConverter):
             return verb + "s"
 
     def generate_sentence(self, features):
-        # TODO
         feats = features.split("+")
 
         verb = feats[-1]
