@@ -3,8 +3,8 @@
     <button @click="startGame" v-if="!gameStarted" class="button">Start Game</button>
     <div v-else>
       <h1>{{ spanishWord }}</h1>
-      <button v-for="(option, index) in translationOptions" :key="index" @click="checkTranslation(option)"
-        class="button">{{ option }}</button>
+        <button v-for="(option, index) in translationOptions" :key="index" @click="checkTranslation(option)" :disabled="feedback == 'Correct!'" class="button">{{ option }}</button>
+        <h2 v-if="selectedVerb !== ''">{{  feedback }}</h2>
     </div>
   </div>
 </template>
@@ -20,6 +20,7 @@ export default {
     const spanishWord = ref('');
     const selectedTranslation = ref('');
     const translationOptions = ref([]);
+    const feedback = ref('')
 
     const makeApiRequest = () => {
       var axios = require('axios');
@@ -84,8 +85,13 @@ export default {
 
     const checkTranslation = (translation) => {
       if (translation === englishWord.value) {
+        feedback.value = 'Correct!'
+        setTimeout(() => {
         startGame();
+        feedback.value = '';
+      }, 1000);
       } else {
+        feedback.value = 'Incorrect!'
         selectedTranslation.value = translation;
       }
     };
@@ -100,6 +106,7 @@ export default {
 
     return {
       gameStarted,
+      feedback,
       englishWord,
       spanishWord,
       selectedTranslation,
