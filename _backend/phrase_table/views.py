@@ -58,8 +58,8 @@ def get_en_es_translation(request):
     en_word, es_word = get_random_word_pair("en", "es")
     feats, rand_sentence = get_random_sentence(en_word)
     rand_sentence_translated = translate(es_word,feats,  "en", "sp")
-    print(rand_sentence_translated)
-    return JsonResponse({'en': rand_sentence, 'sp': rand_sentence_translated.split(" ")})
+
+    return JsonResponse({'en': rand_sentence, 'sp': rand_sentence_translated.split(" ")}, json_dumps_params={'ensure_ascii': False})
 
 def get_es_right_verb(request):
     # provide verb tense
@@ -73,7 +73,6 @@ def get_es_right_verb(request):
 def get_random_word_pair(src, tgt):
     with open("../data/verbs.tsv", "r", encoding="utf-8") as f:
         verbs = f.read().splitlines()
-        print(verbs)
     verbs = [verb.split() for verb in verbs]
     
     res = random.choice(verbs)
