@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 import random
-
+import pandas as pd
 # Create your views here.
 from django.shortcuts import render
 from phrase_table.models import MyVerb, Pronoun
@@ -93,20 +93,16 @@ def get_random_sentence(word):
     feats = random.choice(neg)  + random.choice(sp) + "+" + random.choice(tense) + "+" + word
     sentence = english_converter.generate_sentence(feats)
     return feats, sentence
-import pandas as pd
+
 def translate(word, feats, src, tgt):
     """
     word: word to translate in target lang
     feats: features of the word (incuding word)
     
     """
-    
     feats = feats[:feats.rindex("+")]+ "+" + word
     df = pd.read_csv("../data/test_spanish_sentences.tsv", sep="\t", header = None, encoding="utf-8")
-    print(df.iloc[394:397])
-    print(feats)
     df = df[df[0] == feats]
-    print(df, feats)
     return df[1].values[0]
 
     
