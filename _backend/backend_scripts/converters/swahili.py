@@ -28,7 +28,7 @@ class SwahiliConverter(TenseConverter):
     def to_past_perfect(self, verb, is_neg, sp):
         return "Not Done Yet"
     
-    def to_imperfect(self, verb):
+    def to_imperfect(self, verb, is_neg, sp):
         return verb[2:]
 
     def method_dispatcher(self,method_name):
