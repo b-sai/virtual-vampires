@@ -92,17 +92,13 @@ def get_es_right_verb(request):
 def get_random_word_pair(src, tgt):
     with open("../data/verbs.tsv", "r", encoding="utf-8") as f:
         verbs = f.read().splitlines()
-    verbs = [verb.split() for verb in verbs]
+    verbs = [verb.split(",") for verb in verbs]
     
     res = random.choice(verbs)
     return res[0], res[1]
 
 
-
-
 def get_random_sentence(word):
-    
-
     
     past_tense_exc = exc_to_dict("../data/past_tense_exceptions.csv")
     past_part_exc = exc_to_dict("../data/irregular_verbs_past_participle.csv")
@@ -110,6 +106,7 @@ def get_random_sentence(word):
     english_converter = EnglishConverter(past_tense_exc, past_part_exc)
     feats = get_feats(word, sp, tense, neg)
     sentence = english_converter.generate_sentence(feats)
+    
     return feats, sentence
 
 def get_feats(word, sp, tense, neg):
@@ -120,11 +117,11 @@ def translate(word, feats, src, tgt):
     """
     word: word to translate in target lang
     feats: features of the word (incuding word)
-    
     """
     feats = feats[:feats.rindex("+")]+ "+" + word
     df = pd.read_csv("../data/test_spanish_sentences.tsv", sep="\t", header = None, encoding="utf-8")
     df = df[df[0] == feats]
+    
     return df[1].values[0]
 
     
