@@ -65,7 +65,7 @@ def get_en_es_translation(request):
 
 def get_es_right_verb(request):
     # provide verb tense
-    df = pd.read_csv("../data/verbs.tsv", header = None, encoding="utf-8")
+    df = pd.read_csv("data/verbs.tsv", header = None, encoding="utf-8")
     print(df)
     es_words = random.sample(list(df.iloc[:,1]), 4)
     es_word = es_words[0]
@@ -90,7 +90,7 @@ def get_es_right_verb(request):
 
 
 def get_random_word_pair(src, tgt):
-    with open("../data/verbs.tsv", "r", encoding="utf-8") as f:
+    with open("data/verbs.tsv", "r", encoding="utf-8") as f:
         verbs = f.read().splitlines()
     verbs = [verb.split(",") for verb in verbs]
     
@@ -100,8 +100,8 @@ def get_random_word_pair(src, tgt):
 
 def get_random_sentence(word):
     
-    past_tense_exc = exc_to_dict("../data/past_tense_exceptions.csv")
-    past_part_exc = exc_to_dict("../data/irregular_verbs_past_participle.csv")
+    past_tense_exc = exc_to_dict("data/past_tense_exceptions.csv")
+    past_part_exc = exc_to_dict("data/irregular_verbs_past_participle.csv")
 
     english_converter = EnglishConverter(past_tense_exc, past_part_exc)
     feats = get_feats(word, sp, tense, neg)
@@ -119,7 +119,7 @@ def translate(word, feats, src, tgt):
     feats: features of the word (incuding word)
     """
     feats = feats[:feats.rindex("+")]+ "+" + word
-    df = pd.read_csv("../data/test_spanish_sentences.tsv", sep="\t", header = None, encoding="utf-8")
+    df = pd.read_csv("data/test_spanish_sentences.tsv", sep="\t", header = None, encoding="utf-8")
     df = df[df[0] == feats]
     
     return df[1].values[0]
