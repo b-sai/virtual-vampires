@@ -15,7 +15,9 @@ from backend_scripts.converters.english import EnglishConverter
 from backend_scripts.utils import exc_to_dict
 import logging
 logger = logging.getLogger('django')
-
+sp = ["1s", "2s", "3s", "1p", "2p", "3p"]
+tense = ["PAST", "FUT", "IMP", "PRES"]
+neg = ["NEG+", ""]
 class VerbViewSet(viewsets.ModelViewSet):
     queryset = MyVerb.objects.all()
     serializer_class = VerbSerializer
@@ -63,17 +65,34 @@ def get_en_es_translation(request):
 
 def get_es_right_verb(request):
     # provide verb tense
-    return JsonResponse({'sentence': 'he ____',
-                         'verb': 'jump',
-                         'correct': 'jumped' ,
-                         'wrong': ['will run', 'eats', 'laughs']
-                         })
+    df = pd.read_csv("data/verbs.tsv", header = None, encoding="utf-8")
+    print(df)
+    es_words = random.sample(list(df.iloc[:,1]), 4)
+    es_word = es_words[0]
+    # en_word, es_word = get_random_word_pair("en", "es")
+    feats = get_feats(es_word, sp, tense, neg)
+
+    print(es_word)
+    feat_str = translate(es_word, feats, "en", "sp")
+    # feat_str = "test"
+    if " " in feat_str:
+        sentence_part = feat_str[:feat_str.rindex(" ")]
+        correct_verb = feat_str[feat_str.rindex(" ")+1:]
+    else:
+        sentence_part = ""
+        correct_verb = feat_str
+        
+    return JsonResponse({'sentence': sentence_part + " __________",
+                         'verb': es_word,
+                         'correct': correct_verb ,
+                         'wrong': es_words[1:]},
+                         json_dumps_params={'ensure_ascii': False})
 
 
 def get_random_word_pair(src, tgt):
-    with open("../data/verbs.tsv", "r", encoding="utf-8") as f:
+    with open("data/verbs.tsv", "r", encoding="utf-8") as f:
         verbs = f.read().splitlines()
-    verbs = [verb.split() for verb in verbs]
+    verbs = [verb.split(",") for verb in verbs]
     
     res = random.choice(verbs)
     return res[0], res[1]
@@ -81,27 +100,28 @@ def get_random_word_pair(src, tgt):
 
 def get_random_sentence(word):
     
-    sp = ["1s", "2s", "3s", "1p", "2p", "3p"]
-    tense = ["PAST", "FUT", "IMP", "PRES"]
-    neg = ["NEG+", ""]
-    
-    past_tense_exc = exc_to_dict("../data/past_tense_exceptions.csv")
-    past_part_exc = exc_to_dict("../data/irregular_verbs_past_participle.csv")
+    past_tense_exc = exc_to_dict("data/past_tense_exceptions.csv")
+    past_part_exc = exc_to_dict("data/irregular_verbs_past_participle.csv")
 
     english_converter = EnglishConverter(past_tense_exc, past_part_exc)
-    feats = random.choice(neg)  + random.choice(sp) + "+" + random.choice(tense) + "+" + word
+    feats = get_feats(word, sp, tense, neg)
     sentence = english_converter.generate_sentence(feats)
+    
     return feats, sentence
+
+def get_feats(word, sp, tense, neg):
+    feats = random.choice(neg)  + random.choice(sp) + "+" + random.choice(tense) + "+" + word
+    return feats
 
 def translate(word, feats, src, tgt):
     """
     word: word to translate in target lang
     feats: features of the word (incuding word)
-    
     """
     feats = feats[:feats.rindex("+")]+ "+" + word
-    df = pd.read_csv("../data/test_spanish_sentences.tsv", sep="\t", header = None, encoding="utf-8")
+    df = pd.read_csv("data/test_spanish_sentences.tsv", sep="\t", header = None, encoding="utf-8")
     df = df[df[0] == feats]
+    
     return df[1].values[0]
 
     
