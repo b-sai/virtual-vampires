@@ -5,7 +5,7 @@ class SwahiliConverter(TenseConverter):
 
     def __init__(self, irregular_verbs:dict = None):
         super().__init__()
-        # self.irregular_verbs = irregular_verbs
+        self.irregular_verbs = irregular_verbs
         # add any exception files here
     def to_past(self, verb, is_neg, sp):
         # if is_neg and verb[2:] == "la":
@@ -49,18 +49,24 @@ class SwahiliConverter(TenseConverter):
             return pronouns[sp]  + tense["Perfect"] + verb[2:]
     
     def to_imperitive(self, verb, is_neg, sp):
-        # if(verb not in self.irregular_verbs and sp == "2s"):
-        #     return verb[2:]
-        # elif(verb not in self.irregular_verbs and sp == "2p"):
-        #     if verb[-1] == "a":
-        #         return verb[2:-1] + "eni"
-        #     else:
-        #         return verb[2:] + "ni"
-        # elif(verb in self.irregular_verbs and sp == "2s"):
-        #     #return irregular_verbs[verb]
-        # elif(verb in self.irregular_verbs and sp == "2p"):
-        #     #return irregular_verbs[verb]
-        return ""
+        if(verb not in self.irregular_verbs and sp == "2s"):
+            #how does the ["la", "fa", "ja"] conditional act in the case of plural?
+            if verb[2:] in ["la", "fa", "ja"]:
+                return verb
+            else:
+                return verb[2:]
+        elif(verb not in self.irregular_verbs and sp == "2p"):
+            if verb[-1] == "a":
+                return verb[2:-1] + "eni"
+            else:
+                return verb[2:] + "ni"
+        elif(verb in self.irregular_verbs and sp == "2s"):
+            return self.irregular_verbs[verb]
+        elif(verb in self.irregular_verbs and sp == "2p"):
+            if self.irregular_verbs[verb][-1] == "a":
+                return self.irregular_verbs[verb][:-1] + "eni"
+            else:
+                return self.irregular_verbs[verb] + "ni"
 
     def to_imperfect(self, verb, is_neg, sp):
         return ""
