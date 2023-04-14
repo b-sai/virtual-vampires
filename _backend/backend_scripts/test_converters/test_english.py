@@ -12,7 +12,7 @@ class TestEnglish(unittest.TestCase):
         
         past_tense_exc = exc_to_dict("data/past_tense_exceptions.csv")
         past_part_exc = exc_to_dict("data/irregular_verbs_past_participle.csv")
-        
+
         english = EnglishConverter(past_tense_exc, past_part_exc)
         
         for feats,english_sent in sentences:

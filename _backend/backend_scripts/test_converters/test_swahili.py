@@ -11,24 +11,13 @@ class TestSwahili(unittest.TestCase):
                 sentences.append(line.strip().split("\t"))
         
         #past_tense_exc = exc_to_dict("data/past_tense_exceptions.csv")
-        #past_part_exc = exc_to_dict("data/irregular_verbs_past_participle.csv")
+        irregular_exc = exc_to_dict("data/irregular_verbs_swahili.csv")
         
-        swahili = SwahiliConverter()
+        swahili = SwahiliConverter(irregular_exc)
         
         for feats,english_sent, swahili_sent in sentences:
-            feats2 = feats.split("+")
-            verb = feats2[-1]
-            if feats2[0] == "NEG":
-                sp = feats2[1]
-                tense = feats2[2]
-                is_neg = True
-            else:
-                sp = feats2[0]
-                tense = feats2[1]
-                is_neg = False
-            if (tense != "IMP"):
-                res = swahili.generate_sentence(feats)
-                self.assertEqual(res, swahili_sent)
+            res = swahili.generate_sentence(feats)
+            self.assertEqual(res, swahili_sent)
 
 if __name__ == '__main__':
     unittest.main()
