@@ -9,10 +9,10 @@ import {
 
 export default createStore({
   state: {
-    user: null
+    user: null,
+    myVariable: ''
   },
   mutations: {
-
     SET_USER (state, user) {
       state.user = user
     },
@@ -20,7 +20,6 @@ export default createStore({
     CLEAR_USER (state) {
       state.user = null
     }
-
   },
   actions: {
     async login ({ commit }, details) {
@@ -100,6 +99,5 @@ export default createStore({
         }
       })
     }
-    
   }
 })

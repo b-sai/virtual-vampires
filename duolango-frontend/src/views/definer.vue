@@ -1,60 +1,82 @@
 <template>
   <div>
+    
+   <p>Lang: {{global.lang}}</p>
     <button @click="startGame" v-if="!gameStarted" class="button">Start Game</button>
     <div v-else>
-      <h1>{{ spanishWord }}</h1>
+      <h1>{{ foreignWord }}</h1>
         <button v-for="(option, index) in translationOptions" :key="index" @click="checkTranslation(option)" :disabled="feedback == 'Correct!'" class="button">{{ option }}</button>
-        <h2 v-if="selectedVerb !== ''">{{  feedback }}</h2>
+        <h2 >{{  feedback }}</h2>
     </div>
   </div>
+  
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, getCurrentInstance } from 'vue';
+
+
 
 export default {
+
   name: 'Game',
   setup() {
+    const { proxy } = getCurrentInstance();
     const gameStarted = ref(false);
     const englishWord = ref('');
-    const spanishWord = ref('');
+    const foreignWord = ref('');
     const selectedTranslation = ref('');
     const translationOptions = ref([]);
     const feedback = ref('')
 
     const makeApiRequest = () => {
       var axios = require('axios');
+      var apiLink = ('')
+      if (proxy.global.lang =="Spanish"){
+        apiLink = "http://127.0.0.1:8000/rand_elem/"
+      }
+      else{
+        apiLink = "http://127.0.0.1:8000/rand_elem/" //CHANGE TO SWAHILI API
+      }
       var config = {
-        method: 'get',
-        url: "http://127.0.0.1:8000/rand_elem/",
-        auth: {
-          username: process.env.VUE_APP_username,
-          password: process.env.VUE_APP_password,
+      method: 'get',
+      url: apiLink,
+      auth: {
+        username: process.env.VUE_APP_username,
+        password: process.env.VUE_APP_password,
         },
-        headers: {
-          'Content-Type': 'application/json',
+      headers: {
+        'Content-Type': 'application/json',
         },
       };
+      
       return axios(config);
     };
-
+    
     const makeIncorrectApiRequest = () => {
       var axios = require('axios');
+      var apiLink = ('')
+      if (proxy.global.lang == "Spanish"){
+        apiLink = "http://127.0.0.1:8000/rand_elem/"
+      }
+      else{
+        apiLink = "http://127.0.0.1:8000/rand_elem/" //CHANGE TO SWAHILI API
+      }
       var config = {
         method: 'get',
-        url: "http://127.0.0.1:8000/rand_elem/",
+        url: apiLink,
         auth: {
           username: process.env.VUE_APP_username,
           password: process.env.VUE_APP_password,
         },
         params: {
-          sp: spanishWord.value,
+          sp: foreignWord.value,
           en: false,
         },
         headers: {
           'Content-Type': 'application/json',
         },
-      };
+      }
       return axios(config);
     };
 
@@ -63,7 +85,7 @@ export default {
 
       const { data } = await makeApiRequest();
       englishWord.value = data.en;
-      spanishWord.value = data.sp;
+      foreignWord.value = data.sp;
       selectedTranslation.value = '';
       
       // Generate three incorrect translation options
@@ -108,11 +130,14 @@ export default {
       gameStarted,
       feedback,
       englishWord,
-      spanishWord,
+      foreignWord,
       selectedTranslation,
       translationOptions,
       startGame,
       checkTranslation,
+
+      
+ 
 };
 
   },
