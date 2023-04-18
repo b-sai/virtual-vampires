@@ -39,7 +39,6 @@ export default {
       else {
         apiLink = "http://127.0.0.1:8000/en_es_verbs/"
       }
-
       var config = {
         method: 'get',
         url: apiLink,
