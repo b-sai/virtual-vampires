@@ -48,21 +48,24 @@ class SwahiliConverter(TenseConverter):
         else:
             return pronouns[sp]  + tense["Perfect"] + verb[2:]
     
+    # the imperative has been changed so that there is no conflict with the api since it randomly uses 1s person and 3rd person
+    # which may not be valid with swahili
     def to_imperitive(self, verb, is_neg, sp):
-        if(verb not in self.irregular_verbs and sp == "2s"):
+        if(verb not in self.irregular_verbs and sp[1] == "s"):
             #how does the ["la", "fa", "ja"] conditional act in the case of plural?
             if verb[2:] in ["la", "fa", "ja"]:
                 return verb
             else:
                 return verb[2:]
-        elif(verb not in self.irregular_verbs and sp == "2p"):
+        #think about 3rd person plural later
+        elif(verb not in self.irregular_verbs and sp[1] == "p"):
             if verb[-1] == "a":
                 return verb[2:-1] + "eni"
             else:
                 return verb[2:] + "ni"
-        elif(verb in self.irregular_verbs and sp == "2s"):
+        elif(verb in self.irregular_verbs and sp[1] == "s"):
             return self.irregular_verbs[verb]
-        elif(verb in self.irregular_verbs and sp == "2p"):
+        elif(verb in self.irregular_verbs and sp[1] == "p"):
             if self.irregular_verbs[verb][-1] == "a":
                 return self.irregular_verbs[verb][:-1] + "eni"
             else:
