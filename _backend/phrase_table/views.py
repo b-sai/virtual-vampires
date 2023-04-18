@@ -12,6 +12,7 @@ from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 
 from backend_scripts.converters.english import EnglishConverter
+from backend_scripts.converters.swahili import SwahiliConverter
 from backend_scripts.utils import exc_to_dict
 import logging
 logger = logging.getLogger('django')
@@ -37,8 +38,15 @@ def get_random_verb_pair(request):
     if len(items) > 0:
         random_item = random.choice(items)
 
-        return JsonResponse({'en': random_item.english, 'sp': random_item.spanish})
-    return JsonResponse({'en': 'Null', 'sp': 'Null'})
+        return JsonResponse({'en': random_item.english, 'foreign': random_item.spanish})
+    return JsonResponse({'en': 'Null', 'foreign': 'Null'})
+
+def get_random_verb_pair_swa(request):
+    with open("data/dict.tsv", "r") as f:
+        word_dict = f.read().splitlines()
+    en_swa = [words.strip().split("\t")[:2] for words in word_dict]
+    random_word = random.choice(en_swa)
+    return JsonResponse({'en': random_word[1], 'foreign': random_word[0]}) 
 
 
 def get_random_english_sentence(request):
@@ -57,11 +65,19 @@ def get_random_english_sentence(request):
 def get_en_es_translation(request):
     # Provide random sentence with proper translation.
     # call random english sentence to get other incorrect translations
-    en_word, es_word = get_random_word_pair("en", "es")
+    en_word, es_word = get_random_word_pair("en", "foreign")
     feats, rand_sentence = get_random_sentence(en_word)
     rand_sentence_translated = translate(es_word,feats,  "en", "sp")
 
-    return JsonResponse({'en': rand_sentence, 'sp': rand_sentence_translated.split(" ")}, json_dumps_params={'ensure_ascii': False})
+    return JsonResponse({'en': rand_sentence, 'foreign': rand_sentence_translated.split(" ")}, json_dumps_params={'ensure_ascii': False})
+
+def get_en_swa_translation(request):
+    en_word, swa_word = get_random_word_pair_swa("en", "foreign")
+    feats, rand_sentence = get_random_sentence(en_word)
+    swahili_feats = feats.replace(en_word, swa_word)
+    print("A")
+    swahili_translation = translate_swahili(swahili_feats)
+    return JsonResponse({'en':rand_sentence, 'foreign':swahili_translation})
 
 def get_es_right_verb(request):
     # provide verb tense
@@ -88,7 +104,28 @@ def get_es_right_verb(request):
                          'wrong': es_words[1:]},
                          json_dumps_params={'ensure_ascii': False})
 
-
+def get_swa_right_verb(request):
+    # provide verb tense
+    with open("data/dict.tsv", "r") as f:
+        word_dict = f.read().splitlines()
+    swa_words = [words.strip().split("\t")[0] for words in word_dict]
+    swa_word = random.choice(swa_words)
+    # en_word, es_word = get_random_word_pair("en", "es")
+    feats = []
+    swahili_translations = []
+    while(1):
+        feat = get_feats(swa_word, sp, tense + ["PERF"], neg)
+        if(feat not in feats):
+            feats = feats + [feat]
+            swahili_translations = swahili_translations + [translate_swahili(feat)]
+        if(len(feats) == 4):
+            break
+    #feats = get_feats(swa_word, sp, tense + ["PERF"], neg)
+    return JsonResponse({'sentence': feats[0].replace("+"+swa_word, ""),
+                         'verb': swa_word,
+                         'correct': swahili_translations[0] ,
+                         'wrong': swahili_translations[1:]},
+                         json_dumps_params={'ensure_ascii': False})
 def get_random_word_pair(src, tgt):
     with open("data/verbs.tsv", "r", encoding="utf-8") as f:
         verbs = f.read().splitlines()
@@ -97,6 +134,13 @@ def get_random_word_pair(src, tgt):
     res = random.choice(verbs)
     return res[0], res[1]
 
+
+def get_random_word_pair_swa(src, tgt):
+    with open("data/dict.tsv", "r") as f:
+        word_dict = f.read().splitlines()
+    en_swa = [words.strip().split("\t")[:2] for words in word_dict]
+    random_word = random.choice(en_swa)
+    return random_word[1], random_word[0]
 
 def get_random_sentence(word):
     
@@ -123,5 +167,11 @@ def translate(word, feats, src, tgt):
     df = df[df[0] == feats]
     
     return df[1].values[0]
+
+def translate_swahili(feats):
+    irregular_exc = exc_to_dict("data/irregular_verbs_swahili.csv")
+    
+    swahili_converter = SwahiliConverter(irregular_exc)
+    return swahili_converter.generate_sentence(feats)
 
     

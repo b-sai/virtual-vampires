@@ -1,0 +1,576 @@
+1s+PRES+ordenar	yo ordeno
+NEG+1s+PRES+ordenar	yo no ordeno
+1s+PAST+ordenar	yo ordené
+NEG+1s+PAST+ordenar	yo no ordené
+1s+IMP+ordenar	yo ordenaba
+NEG+1s+IMP+ordenar	yo no ordenaba
+1s+FUT+ordenar	yo ordenaré
+NEG+1s+FUT+ordenar	yo no ordenaré
+2s+PRES+ordenar	tú ordenas
+NEG+2s+PRES+ordenar	tú no ordenas
+2s+PAST+ordenar	tú ordenaste
+NEG+2s+PAST+ordenar	tú no ordenaste
+2s+IMP+ordenar	tú ordenabas
+NEG+2s+IMP+ordenar	tú no ordenabas
+2s+FUT+ordenar	tú ordenarás
+NEG+2s+FUT+ordenar	tú no ordenarás
+3s+PRES+ordenar	él/ella/usted ordena
+NEG+3s+PRES+ordenar	él/ella/usted no ordena
+3s+PAST+ordenar	él/ella/usted ordenó
+NEG+3s+PAST+ordenar	él/ella/usted no ordenó
+3s+IMP+ordenar	él/ella/usted ordenaba
+NEG+3s+IMP+ordenar	él/ella/usted no ordenaba
+3s+FUT+ordenar	él/ella/usted ordenará
+NEG+3s+FUT+ordenar	él/ella/usted no ordenará
+1p+PRES+ordenar	nosotros ordenamos
+NEG+1p+PRES+ordenar	nosotros no ordenamos
+1p+PAST+ordenar	nosotros ordenamos
+NEG+1p+PAST+ordenar	nosotros no ordenamos
+1p+IMP+ordenar	nosotros ordenábamos
+NEG+1p+IMP+ordenar	nosotros no ordenábamos
+1p+FUT+ordenar	nosotros ordenaremos
+NEG+1p+FUT+ordenar	nosotros no ordenaremos
+2p+PRES+ordenar	vosotros ordenáis
+NEG+2p+PRES+ordenar	vosotros no ordenáis
+2p+PAST+ordenar	vosotros ordenasteis
+NEG+2p+PAST+ordenar	vosotros no ordenasteis
+2p+IMP+ordenar	vosotros ordenabais
+NEG+2p+IMP+ordenar	vosotros no ordenabais
+2p+FUT+ordenar	vosotros ordenaréis
+NEG+2p+FUT+ordenar	vosotros no ordenaréis
+3p+PRES+ordenar	ellos/ellas/ustedes ordenan
+NEG+3p+PRES+ordenar	ellos/ellas/ustedes no ordenan
+3p+PAST+ordenar	ellos/ellas/ustedes ordenaron
+NEG+3p+PAST+ordenar	ellos/ellas/ustedes no ordenaron
+3p+IMP+ordenar	ellos/ellas/ustedes ordenaban
+NEG+3p+IMP+ordenar	ellos/ellas/ustedes no ordenaban
+3p+FUT+ordenar	ellos/ellas/ustedes ordenarán
+NEG+3p+FUT+ordenar	ellos/ellas/ustedes no ordenarán
+1s+PRES+manejar	yo manejo
+NEG+1s+PRES+manejar	yo no manejo
+1s+PAST+manejar	yo manejé
+NEG+1s+PAST+manejar	yo no manejé
+1s+IMP+manejar	yo manejaba
+NEG+1s+IMP+manejar	yo no manejaba
+1s+FUT+manejar	yo manejaré
+NEG+1s+FUT+manejar	yo no manejaré
+2s+PRES+manejar	tú manejas
+NEG+2s+PRES+manejar	tú no manejas
+2s+PAST+manejar	tú manejaste
+NEG+2s+PAST+manejar	tú no manejaste
+2s+IMP+manejar	tú manejabas
+NEG+2s+IMP+manejar	tú no manejabas
+2s+FUT+manejar	tú manejarás
+NEG+2s+FUT+manejar	tú no manejarás
+3s+PRES+manejar	él/ella/usted maneja
+NEG+3s+PRES+manejar	él/ella/usted no maneja
+3s+PAST+manejar	él/ella/usted manejó
+NEG+3s+PAST+manejar	él/ella/usted no manejó
+3s+IMP+manejar	él/ella/usted manejaba
+NEG+3s+IMP+manejar	él/ella/usted no manejaba
+3s+FUT+manejar	él/ella/usted manejará
+NEG+3s+FUT+manejar	él/ella/usted no manejará
+1p+PRES+manejar	nosotros manejamos
+NEG+1p+PRES+manejar	nosotros no manejamos
+1p+PAST+manejar	nosotros manejamos
+NEG+1p+PAST+manejar	nosotros no manejamos
+1p+IMP+manejar	nosotros manejábamos
+NEG+1p+IMP+manejar	nosotros no manejábamos
+1p+FUT+manejar	nosotros manejaremos
+NEG+1p+FUT+manejar	nosotros no manejaremos
+2p+PRES+manejar	vosotros manejáis
+NEG+2p+PRES+manejar	vosotros no manejáis
+2p+PAST+manejar	vosotros manejasteis
+NEG+2p+PAST+manejar	vosotros no manejasteis
+2p+IMP+manejar	vosotros manejabais
+NEG+2p+IMP+manejar	vosotros no manejabais
+2p+FUT+manejar	vosotros manejaréis
+NEG+2p+FUT+manejar	vosotros no manejaréis
+3p+PRES+manejar	ellos/ellas/ustedes manejan
+NEG+3p+PRES+manejar	ellos/ellas/ustedes no manejan
+3p+PAST+manejar	ellos/ellas/ustedes manejaron
+NEG+3p+PAST+manejar	ellos/ellas/ustedes no manejaron
+3p+IMP+manejar	ellos/ellas/ustedes manejaban
+NEG+3p+IMP+manejar	ellos/ellas/ustedes no manejaban
+3p+FUT+manejar	ellos/ellas/ustedes manejarán
+NEG+3p+FUT+manejar	ellos/ellas/ustedes no manejarán
+1s+PRES+pensar	yo pienso
+NEG+1s+PRES+pensar	yo no pienso
+1s+PAST+pensar	yo pensé
+NEG+1s+PAST+pensar	yo no pensé
+1s+IMP+pensar	yo pensaba
+NEG+1s+IMP+pensar	yo no pensaba
+1s+FUT+pensar	yo pensaré
+NEG+1s+FUT+pensar	yo no pensaré
+2s+PRES+pensar	tú piensas
+NEG+2s+PRES+pensar	tú no piensas
+2s+PAST+pensar	tú pensaste
+NEG+2s+PAST+pensar	tú no pensaste
+2s+IMP+pensar	tú pensabas
+NEG+2s+IMP+pensar	tú no pensabas
+2s+FUT+pensar	tú pensarás
+NEG+2s+FUT+pensar	tú no pensarás
+3s+PRES+pensar	él/ella/usted piensa
+NEG+3s+PRES+pensar	él/ella/usted no piensa
+3s+PAST+pensar	él/ella/usted pensó
+NEG+3s+PAST+pensar	él/ella/usted no pensó
+3s+IMP+pensar	él/ella/usted pensaba
+NEG+3s+IMP+pensar	él/ella/usted no pensaba
+3s+FUT+pensar	él/ella/usted pensará
+NEG+3s+FUT+pensar	él/ella/usted no pensará
+1p+PRES+pensar	nosotros pensamos
+NEG+1p+PRES+pensar	nosotros no pensamos
+1p+PAST+pensar	nosotros pensamos
+NEG+1p+PAST+pensar	nosotros no pensamos
+1p+IMP+pensar	nosotros pensábamos
+NEG+1p+IMP+pensar	nosotros no pensábamos
+1p+FUT+pensar	nosotros pensaremos
+NEG+1p+FUT+pensar	nosotros no pensaremos
+2p+PRES+pensar	vosotros pensáis
+NEG+2p+PRES+pensar	vosotros no pensáis
+2p+PAST+pensar	vosotros pensasteis
+NEG+2p+PAST+pensar	vosotros no pensasteis
+2p+IMP+pensar	vosotros pensabais
+NEG+2p+IMP+pensar	vosotros no pensabais
+2p+FUT+pensar	vosotros pensaréis
+NEG+2p+FUT+pensar	vosotros no pensaréis
+3p+PRES+pensar	ellos/ellas/ustedes piensan
+NEG+3p+PRES+pensar	ellos/ellas/ustedes no piensan
+3p+PAST+pensar	ellos/ellas/ustedes pensaron
+NEG+3p+PAST+pensar	ellos/ellas/ustedes no pensaron
+3p+IMP+pensar	ellos/ellas/ustedes pensaban
+NEG+3p+IMP+pensar	ellos/ellas/ustedes no pensaban
+3p+FUT+pensar	ellos/ellas/ustedes pensarán
+NEG+3p+FUT+pensar	ellos/ellas/ustedes no pensarán
+1s+PRES+terminar	yo termino
+NEG+1s+PRES+terminar	yo no termino
+1s+PAST+terminar	yo terminé
+NEG+1s+PAST+terminar	yo no terminé
+1s+IMP+terminar	yo terminaba
+NEG+1s+IMP+terminar	yo no terminaba
+1s+FUT+terminar	yo terminaré
+NEG+1s+FUT+terminar	yo no terminaré
+2s+PRES+terminar	tú terminas
+NEG+2s+PRES+terminar	tú no terminas
+2s+PAST+terminar	tú terminaste
+NEG+2s+PAST+terminar	tú no terminaste
+2s+IMP+terminar	tú terminabas
+NEG+2s+IMP+terminar	tú no terminabas
+2s+FUT+terminar	tú terminarás
+NEG+2s+FUT+terminar	tú no terminarás
+3s+PRES+terminar	él/ella/usted termina
+NEG+3s+PRES+terminar	él/ella/usted no termina
+3s+PAST+terminar	él/ella/usted terminó
+NEG+3s+PAST+terminar	él/ella/usted no terminó
+3s+IMP+terminar	él/ella/usted terminaba
+NEG+3s+IMP+terminar	él/ella/usted no terminaba
+3s+FUT+terminar	él/ella/usted terminará
+NEG+3s+FUT+terminar	él/ella/usted no terminará
+1p+PRES+terminar	nosotros terminamos
+NEG+1p+PRES+terminar	nosotros no terminamos
+1p+PAST+terminar	nosotros terminamos
+NEG+1p+PAST+terminar	nosotros no terminamos
+1p+IMP+terminar	nosotros terminábamos
+NEG+1p+IMP+terminar	nosotros no terminábamos
+1p+FUT+terminar	nosotros terminaremos
+NEG+1p+FUT+terminar	nosotros no terminaremos
+2p+PRES+terminar	vosotros termináis
+NEG+2p+PRES+terminar	vosotros no termináis
+2p+PAST+terminar	vosotros terminasteis
+NEG+2p+PAST+terminar	vosotros no terminasteis
+2p+IMP+terminar	vosotros terminabais
+NEG+2p+IMP+terminar	vosotros no terminabais
+2p+FUT+terminar	vosotros terminaréis
+NEG+2p+FUT+terminar	vosotros no terminaréis
+3p+PRES+terminar	ellos/ellas/ustedes terminan
+NEG+3p+PRES+terminar	ellos/ellas/ustedes no terminan
+3p+PAST+terminar	ellos/ellas/ustedes terminaron
+NEG+3p+PAST+terminar	ellos/ellas/ustedes no terminaron
+3p+IMP+terminar	ellos/ellas/ustedes terminaban
+NEG+3p+IMP+terminar	ellos/ellas/ustedes no terminaban
+3p+FUT+terminar	ellos/ellas/ustedes terminarán
+NEG+3p+FUT+terminar	ellos/ellas/ustedes no terminarán
+1s+PRES+explicar	yo explico
+NEG+1s+PRES+explicar	yo no explico
+1s+PAST+explicar	yo expliqué
+NEG+1s+PAST+explicar	yo no expliqué
+1s+IMP+explicar	yo explicaba
+NEG+1s+IMP+explicar	yo no explicaba
+1s+FUT+explicar	yo explicaré
+NEG+1s+FUT+explicar	yo no explicaré
+2s+PRES+explicar	tú explicas
+NEG+2s+PRES+explicar	tú no explicas
+2s+PAST+explicar	tú explicaste
+NEG+2s+PAST+explicar	tú no explicaste
+2s+IMP+explicar	tú explicabas
+NEG+2s+IMP+explicar	tú no explicabas
+2s+FUT+explicar	tú explicarás
+NEG+2s+FUT+explicar	tú no explicarás
+3s+PRES+explicar	él/ella/usted explica
+NEG+3s+PRES+explicar	él/ella/usted no explica
+3s+PAST+explicar	él/ella/usted explicó
+NEG+3s+PAST+explicar	él/ella/usted no explicó
+3s+IMP+explicar	él/ella/usted explicaba
+NEG+3s+IMP+explicar	él/ella/usted no explicaba
+3s+FUT+explicar	él/ella/usted explicará
+NEG+3s+FUT+explicar	él/ella/usted no explicará
+1p+PRES+explicar	nosotros explicamos
+NEG+1p+PRES+explicar	nosotros no explicamos
+1p+PAST+explicar	nosotros explicamos
+NEG+1p+PAST+explicar	nosotros no explicamos
+1p+IMP+explicar	nosotros explicábamos
+NEG+1p+IMP+explicar	nosotros no explicábamos
+1p+FUT+explicar	nosotros explicaremos
+NEG+1p+FUT+explicar	nosotros no explicaremos
+2p+PRES+explicar	vosotros explicáis
+NEG+2p+PRES+explicar	vosotros no explicáis
+2p+PAST+explicar	vosotros explicasteis
+NEG+2p+PAST+explicar	vosotros no explicasteis
+2p+IMP+explicar	vosotros explicabais
+NEG+2p+IMP+explicar	vosotros no explicabais
+2p+FUT+explicar	vosotros explicaréis
+NEG+2p+FUT+explicar	vosotros no explicaréis
+3p+PRES+explicar	ellos/ellas/ustedes explican
+NEG+3p+PRES+explicar	ellos/ellas/ustedes no explican
+3p+PAST+explicar	ellos/ellas/ustedes explicaron
+NEG+3p+PAST+explicar	ellos/ellas/ustedes no explicaron
+3p+IMP+explicar	ellos/ellas/ustedes explicaban
+NEG+3p+IMP+explicar	ellos/ellas/ustedes no explicaban
+3p+FUT+explicar	ellos/ellas/ustedes explicarán
+NEG+3p+FUT+explicar	ellos/ellas/ustedes no explicarán
+1s+PRES+suceder	yo sucedo
+NEG+1s+PRES+suceder	yo no sucedo
+1s+PAST+suceder	yo sucedí
+NEG+1s+PAST+suceder	yo no sucedí
+1s+IMP+suceder	yo sucedía
+NEG+1s+IMP+suceder	yo no sucedía
+1s+FUT+suceder	yo sucederé
+NEG+1s+FUT+suceder	yo no sucederé
+2s+PRES+suceder	tú sucedes
+NEG+2s+PRES+suceder	tú no sucedes
+2s+PAST+suceder	tú sucediste
+NEG+2s+PAST+suceder	tú no sucediste
+2s+IMP+suceder	tú sucedías
+NEG+2s+IMP+suceder	tú no sucedías
+2s+FUT+suceder	tú sucederás
+NEG+2s+FUT+suceder	tú no sucederás
+3s+PRES+suceder	él/ella/usted sucede
+NEG+3s+PRES+suceder	él/ella/usted no sucede
+3s+PAST+suceder	él/ella/usted sucedió
+NEG+3s+PAST+suceder	él/ella/usted no sucedió
+3s+IMP+suceder	él/ella/usted sucedía
+NEG+3s+IMP+suceder	él/ella/usted no sucedía
+3s+FUT+suceder	él/ella/usted sucederá
+NEG+3s+FUT+suceder	él/ella/usted no sucederá
+1p+PRES+suceder	nosotros sucedemos
+NEG+1p+PRES+suceder	nosotros no sucedemos
+1p+PAST+suceder	nosotros sucedimos
+NEG+1p+PAST+suceder	nosotros no sucedimos
+1p+IMP+suceder	nosotros sucedíamos
+NEG+1p+IMP+suceder	nosotros no sucedíamos
+1p+FUT+suceder	nosotros sucederemos
+NEG+1p+FUT+suceder	nosotros no sucederemos
+2p+PRES+suceder	vosotros sucedéis
+NEG+2p+PRES+suceder	vosotros no sucedéis
+2p+PAST+suceder	vosotros sucedisteis
+NEG+2p+PAST+suceder	vosotros no sucedisteis
+2p+IMP+suceder	vosotros sucedíais
+NEG+2p+IMP+suceder	vosotros no sucedíais
+2p+FUT+suceder	vosotros sucederéis
+NEG+2p+FUT+suceder	vosotros no sucederéis
+3p+PRES+suceder	ellos/ellas/ustedes suceden
+NEG+3p+PRES+suceder	ellos/ellas/ustedes no suceden
+3p+PAST+suceder	ellos/ellas/ustedes sucedieron
+NEG+3p+PAST+suceder	ellos/ellas/ustedes no sucedieron
+3p+IMP+suceder	ellos/ellas/ustedes sucedían
+NEG+3p+IMP+suceder	ellos/ellas/ustedes no sucedían
+3p+FUT+suceder	ellos/ellas/ustedes sucederán
+NEG+3p+FUT+suceder	ellos/ellas/ustedes no sucederán
+1s+PRES+opar	yo opo
+NEG+1s+PRES+opar	yo no opo
+1s+PAST+opar	yo opé
+NEG+1s+PAST+opar	yo no opé
+1s+IMP+opar	yo opaba
+NEG+1s+IMP+opar	yo no opaba
+1s+FUT+opar	yo oparé
+NEG+1s+FUT+opar	yo no oparé
+2s+PRES+opar	tú opas
+NEG+2s+PRES+opar	tú no opas
+2s+PAST+opar	tú opaste
+NEG+2s+PAST+opar	tú no opaste
+2s+IMP+opar	tú opabas
+NEG+2s+IMP+opar	tú no opabas
+2s+FUT+opar	tú oparás
+NEG+2s+FUT+opar	tú no oparás
+3s+PRES+opar	él/ella/usted opa
+NEG+3s+PRES+opar	él/ella/usted no opa
+3s+PAST+opar	él/ella/usted opó
+NEG+3s+PAST+opar	él/ella/usted no opó
+3s+IMP+opar	él/ella/usted opaba
+NEG+3s+IMP+opar	él/ella/usted no opaba
+3s+FUT+opar	él/ella/usted opará
+NEG+3s+FUT+opar	él/ella/usted no opará
+1p+PRES+opar	nosotros opamos
+NEG+1p+PRES+opar	nosotros no opamos
+1p+PAST+opar	nosotros opamos
+NEG+1p+PAST+opar	nosotros no opamos
+1p+IMP+opar	nosotros opábamos
+NEG+1p+IMP+opar	nosotros no opábamos
+1p+FUT+opar	nosotros oparemos
+NEG+1p+FUT+opar	nosotros no oparemos
+2p+PRES+opar	vosotros opáis
+NEG+2p+PRES+opar	vosotros no opáis
+2p+PAST+opar	vosotros opasteis
+NEG+2p+PAST+opar	vosotros no opasteis
+2p+IMP+opar	vosotros opabais
+NEG+2p+IMP+opar	vosotros no opabais
+2p+FUT+opar	vosotros oparéis
+NEG+2p+FUT+opar	vosotros no oparéis
+3p+PRES+opar	ellos/ellas/ustedes opan
+NEG+3p+PRES+opar	ellos/ellas/ustedes no opan
+3p+PAST+opar	ellos/ellas/ustedes oparon
+NEG+3p+PAST+opar	ellos/ellas/ustedes no oparon
+3p+IMP+opar	ellos/ellas/ustedes opaban
+NEG+3p+IMP+opar	ellos/ellas/ustedes no opaban
+3p+FUT+opar	ellos/ellas/ustedes oparán
+NEG+3p+FUT+opar	ellos/ellas/ustedes no oparán
+1s+PRES+compartir	yo comparto
+NEG+1s+PRES+compartir	yo no comparto
+1s+PAST+compartir	yo compartí
+NEG+1s+PAST+compartir	yo no compartí
+1s+IMP+compartir	yo compartía
+NEG+1s+IMP+compartir	yo no compartía
+1s+FUT+compartir	yo compartiré
+NEG+1s+FUT+compartir	yo no compartiré
+2s+PRES+compartir	tú compartes
+NEG+2s+PRES+compartir	tú no compartes
+2s+PAST+compartir	tú compartiste
+NEG+2s+PAST+compartir	tú no compartiste
+2s+IMP+compartir	tú compartías
+NEG+2s+IMP+compartir	tú no compartías
+2s+FUT+compartir	tú compartirás
+NEG+2s+FUT+compartir	tú no compartirás
+3s+PRES+compartir	él/ella/usted comparte
+NEG+3s+PRES+compartir	él/ella/usted no comparte
+3s+PAST+compartir	él/ella/usted compartió
+NEG+3s+PAST+compartir	él/ella/usted no compartió
+3s+IMP+compartir	él/ella/usted compartía
+NEG+3s+IMP+compartir	él/ella/usted no compartía
+3s+FUT+compartir	él/ella/usted compartirá
+NEG+3s+FUT+compartir	él/ella/usted no compartirá
+1p+PRES+compartir	nosotros compartimos
+NEG+1p+PRES+compartir	nosotros no compartimos
+1p+PAST+compartir	nosotros compartimos
+NEG+1p+PAST+compartir	nosotros no compartimos
+1p+IMP+compartir	nosotros compartíamos
+NEG+1p+IMP+compartir	nosotros no compartíamos
+1p+FUT+compartir	nosotros compartiremos
+NEG+1p+FUT+compartir	nosotros no compartiremos
+2p+PRES+compartir	vosotros compartís
+NEG+2p+PRES+compartir	vosotros no compartís
+2p+PAST+compartir	vosotros compartisteis
+NEG+2p+PAST+compartir	vosotros no compartisteis
+2p+IMP+compartir	vosotros compartíais
+NEG+2p+IMP+compartir	vosotros no compartíais
+2p+FUT+compartir	vosotros compartiréis
+NEG+2p+FUT+compartir	vosotros no compartiréis
+3p+PRES+compartir	ellos/ellas/ustedes comparten
+NEG+3p+PRES+compartir	ellos/ellas/ustedes no comparten
+3p+PAST+compartir	ellos/ellas/ustedes compartieron
+NEG+3p+PAST+compartir	ellos/ellas/ustedes no compartieron
+3p+IMP+compartir	ellos/ellas/ustedes compartían
+NEG+3p+IMP+compartir	ellos/ellas/ustedes no compartían
+3p+FUT+compartir	ellos/ellas/ustedes compartirán
+NEG+3p+FUT+compartir	ellos/ellas/ustedes no compartirán
+1s+PRES+reírse	yo me río
+NEG+1s+PRES+reírse	yo no me río
+1s+PAST+reírse	yo me reí
+NEG+1s+PAST+reírse	yo no me reí
+1s+IMP+reírse	yo me reía
+NEG+1s+IMP+reírse	yo no me reía
+1s+FUT+reírse	yo me reiré
+NEG+1s+FUT+reírse	yo no me reiré
+2s+PRES+reírse	tú te ríes
+NEG+2s+PRES+reírse	tú no te ríes
+2s+PAST+reírse	tú te reíste
+NEG+2s+PAST+reírse	tú no te reíste
+2s+IMP+reírse	tú te reías
+NEG+2s+IMP+reírse	tú no te reías
+2s+FUT+reírse	tú te reirás
+NEG+2s+FUT+reírse	tú no te reirás
+3s+PRES+reírse	él/ella/usted se ríe
+NEG+3s+PRES+reírse	él/ella/usted no se ríe
+3s+PAST+reírse	él/ella/usted se rio
+NEG+3s+PAST+reírse	él/ella/usted no se rio
+3s+IMP+reírse	él/ella/usted se reía
+NEG+3s+IMP+reírse	él/ella/usted no se reía
+3s+FUT+reírse	él/ella/usted se reirá
+NEG+3s+FUT+reírse	él/ella/usted no se reirá
+1p+PRES+reírse	nosotros nos reímos
+NEG+1p+PRES+reírse	nosotros no nos reímos
+1p+PAST+reírse	nosotros nos reímos
+NEG+1p+PAST+reírse	nosotros no nos reímos
+1p+IMP+reírse	nosotros nos reíamos
+NEG+1p+IMP+reírse	nosotros no nos reíamos
+1p+FUT+reírse	nosotros nos reiremos
+NEG+1p+FUT+reírse	nosotros no nos reiremos
+2p+PRES+reírse	vosotros os reís
+NEG+2p+PRES+reírse	vosotros no os reís
+2p+PAST+reírse	vosotros os reísteis
+NEG+2p+PAST+reírse	vosotros no os reísteis
+2p+IMP+reírse	vosotros os reíais
+NEG+2p+IMP+reírse	vosotros no os reíais
+2p+FUT+reírse	vosotros os reiréis
+NEG+2p+FUT+reírse	vosotros no os reiréis
+3p+PRES+reírse	ellos/ellas/ustedes se ríen
+NEG+3p+PRES+reírse	ellos/ellas/ustedes no se ríen
+3p+PAST+reírse	ellos/ellas/ustedes se rieron
+NEG+3p+PAST+reírse	ellos/ellas/ustedes no se rieron
+3p+IMP+reírse	ellos/ellas/ustedes se reían
+NEG+3p+IMP+reírse	ellos/ellas/ustedes no se reían
+3p+FUT+reírse	ellos/ellas/ustedes se reirán
+NEG+3p+FUT+reírse	ellos/ellas/ustedes no se reirán
+1s+PRES+contar	yo cuento
+NEG+1s+PRES+contar	yo no cuento
+1s+PAST+contar	yo conté
+NEG+1s+PAST+contar	yo no conté
+1s+IMP+contar	yo contaba
+NEG+1s+IMP+contar	yo no contaba
+1s+FUT+contar	yo contaré
+NEG+1s+FUT+contar	yo no contaré
+2s+PRES+contar	tú cuentas
+NEG+2s+PRES+contar	tú no cuentas
+2s+PAST+contar	tú contaste
+NEG+2s+PAST+contar	tú no contaste
+2s+IMP+contar	tú contabas
+NEG+2s+IMP+contar	tú no contabas
+2s+FUT+contar	tú contarás
+NEG+2s+FUT+contar	tú no contarás
+3s+PRES+contar	él/ella/usted cuenta
+NEG+3s+PRES+contar	él/ella/usted no cuenta
+3s+PAST+contar	él/ella/usted contó
+NEG+3s+PAST+contar	él/ella/usted no contó
+3s+IMP+contar	él/ella/usted contaba
+NEG+3s+IMP+contar	él/ella/usted no contaba
+3s+FUT+contar	él/ella/usted contará
+NEG+3s+FUT+contar	él/ella/usted no contará
+1p+PRES+contar	nosotros contamos
+NEG+1p+PRES+contar	nosotros no contamos
+1p+PAST+contar	nosotros contamos
+NEG+1p+PAST+contar	nosotros no contamos
+1p+IMP+contar	nosotros contábamos
+NEG+1p+IMP+contar	nosotros no contábamos
+1p+FUT+contar	nosotros contaremos
+NEG+1p+FUT+contar	nosotros no contaremos
+2p+PRES+contar	vosotros contáis
+NEG+2p+PRES+contar	vosotros no contáis
+2p+PAST+contar	vosotros contasteis
+NEG+2p+PAST+contar	vosotros no contasteis
+2p+IMP+contar	vosotros contabais
+NEG+2p+IMP+contar	vosotros no contabais
+2p+FUT+contar	vosotros contaréis
+NEG+2p+FUT+contar	vosotros no contaréis
+3p+PRES+contar	ellos/ellas/ustedes cuentan
+NEG+3p+PRES+contar	ellos/ellas/ustedes no cuentan
+3p+PAST+contar	ellos/ellas/ustedes contaron
+NEG+3p+PAST+contar	ellos/ellas/ustedes no contaron
+3p+IMP+contar	ellos/ellas/ustedes contaban
+NEG+3p+IMP+contar	ellos/ellas/ustedes no contaban
+3p+FUT+contar	ellos/ellas/ustedes contarán
+NEG+3p+FUT+contar	ellos/ellas/ustedes no contarán
+1s+PRES+enseñar	yo enseño
+NEG+1s+PRES+enseñar	yo no enseño
+1s+PAST+enseñar	yo enseñé
+NEG+1s+PAST+enseñar	yo no enseñé
+1s+IMP+enseñar	yo enseñaba
+NEG+1s+IMP+enseñar	yo no enseñaba
+1s+FUT+enseñar	yo enseñaré
+NEG+1s+FUT+enseñar	yo no enseñaré
+2s+PRES+enseñar	tú enseñas
+NEG+2s+PRES+enseñar	tú no enseñas
+2s+PAST+enseñar	tú enseñaste
+NEG+2s+PAST+enseñar	tú no enseñaste
+2s+IMP+enseñar	tú enseñabas
+NEG+2s+IMP+enseñar	tú no enseñabas
+2s+FUT+enseñar	tú enseñarás
+NEG+2s+FUT+enseñar	tú no enseñarás
+3s+PRES+enseñar	él/ella/usted enseña
+NEG+3s+PRES+enseñar	él/ella/usted no enseña
+3s+PAST+enseñar	él/ella/usted enseñó
+NEG+3s+PAST+enseñar	él/ella/usted no enseñó
+3s+IMP+enseñar	él/ella/usted enseñaba
+NEG+3s+IMP+enseñar	él/ella/usted no enseñaba
+3s+FUT+enseñar	él/ella/usted enseñará
+NEG+3s+FUT+enseñar	él/ella/usted no enseñará
+1p+PRES+enseñar	nosotros enseñamos
+NEG+1p+PRES+enseñar	nosotros no enseñamos
+1p+PAST+enseñar	nosotros enseñamos
+NEG+1p+PAST+enseñar	nosotros no enseñamos
+1p+IMP+enseñar	nosotros enseñábamos
+NEG+1p+IMP+enseñar	nosotros no enseñábamos
+1p+FUT+enseñar	nosotros enseñaremos
+NEG+1p+FUT+enseñar	nosotros no enseñaremos
+2p+PRES+enseñar	vosotros enseñáis
+NEG+2p+PRES+enseñar	vosotros no enseñáis
+2p+PAST+enseñar	vosotros enseñasteis
+NEG+2p+PAST+enseñar	vosotros no enseñasteis
+2p+IMP+enseñar	vosotros enseñabais
+NEG+2p+IMP+enseñar	vosotros no enseñabais
+2p+FUT+enseñar	vosotros enseñaréis
+NEG+2p+FUT+enseñar	vosotros no enseñaréis
+3p+PRES+enseñar	ellos/ellas/ustedes enseñan
+NEG+3p+PRES+enseñar	ellos/ellas/ustedes no enseñan
+3p+PAST+enseñar	ellos/ellas/ustedes enseñaron
+NEG+3p+PAST+enseñar	ellos/ellas/ustedes no enseñaron
+3p+IMP+enseñar	ellos/ellas/ustedes enseñaban
+NEG+3p+IMP+enseñar	ellos/ellas/ustedes no enseñaban
+3p+FUT+enseñar	ellos/ellas/ustedes enseñarán
+NEG+3p+FUT+enseñar	ellos/ellas/ustedes no enseñarán
+1s+PRES+entender	yo entiendo
+NEG+1s+PRES+entender	yo no entiendo
+1s+PAST+entender	yo entendí
+NEG+1s+PAST+entender	yo no entendí
+1s+IMP+entender	yo entendía
+NEG+1s+IMP+entender	yo no entendía
+1s+FUT+entender	yo entenderé
+NEG+1s+FUT+entender	yo no entenderé
+2s+PRES+entender	tú entiendes
+NEG+2s+PRES+entender	tú no entiendes
+2s+PAST+entender	tú entendiste
+NEG+2s+PAST+entender	tú no entendiste
+2s+IMP+entender	tú entendías
+NEG+2s+IMP+entender	tú no entendías
+2s+FUT+entender	tú entenderás
+NEG+2s+FUT+entender	tú no entenderás
+3s+PRES+entender	él/ella/usted entiende
+NEG+3s+PRES+entender	él/ella/usted no entiende
+3s+PAST+entender	él/ella/usted entendió
+NEG+3s+PAST+entender	él/ella/usted no entendió
+3s+IMP+entender	él/ella/usted entendía
+NEG+3s+IMP+entender	él/ella/usted no entendía
+3s+FUT+entender	él/ella/usted entenderá
+NEG+3s+FUT+entender	él/ella/usted no entenderá
+1p+PRES+entender	nosotros entendemos
+NEG+1p+PRES+entender	nosotros no entendemos
+1p+PAST+entender	nosotros entendimos
+NEG+1p+PAST+entender	nosotros no entendimos
+1p+IMP+entender	nosotros entendíamos
+NEG+1p+IMP+entender	nosotros no entendíamos
+1p+FUT+entender	nosotros entenderemos
+NEG+1p+FUT+entender	nosotros no entenderemos
+2p+PRES+entender	vosotros entendéis
+NEG+2p+PRES+entender	vosotros no entendéis
+2p+PAST+entender	vosotros entendisteis
+NEG+2p+PAST+entender	vosotros no entendisteis
+2p+IMP+entender	vosotros entendíais
+NEG+2p+IMP+entender	vosotros no entendíais
+2p+FUT+entender	vosotros entenderéis
+NEG+2p+FUT+entender	vosotros no entenderéis
+3p+PRES+entender	ellos/ellas/ustedes entienden
+NEG+3p+PRES+entender	ellos/ellas/ustedes no entienden
+3p+PAST+entender	ellos/ellas/ustedes entendieron
+NEG+3p+PAST+entender	ellos/ellas/ustedes no entendieron
+3p+IMP+entender	ellos/ellas/ustedes entendían
+NEG+3p+IMP+entender	ellos/ellas/ustedes no entendían
+3p+FUT+entender	ellos/ellas/ustedes entenderán
+NEG+3p+FUT+entender	ellos/ellas/ustedes no entenderán
