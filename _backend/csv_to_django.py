@@ -16,5 +16,5 @@ for line in lines:
     tokens = line.split(",")
     eng = tokens[0]
     spn = tokens[1]
-    item = MyVerb(english= eng, spanish = sp)
+    item = MyVerb(english= eng, spanish = spn)
     item.save()
