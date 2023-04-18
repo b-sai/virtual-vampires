@@ -77,7 +77,10 @@ def get_en_swa_translation(request):
     swahili_feats = feats.replace(en_word, swa_word)
     print("A")
     swahili_translation = translate_swahili(swahili_feats)
-    return JsonResponse({'en':rand_sentence, 'foreign':swahili_translation})
+    swahili_0 = swahili_translation[:len(swahili_translation)//3]
+    swahili_1 = swahili_translation[len(swahili_translation)//3:2*len(swahili_translation)//3]
+    swahili_2 = swahili_translation[2*len(swahili_translation)//3:]
+    return JsonResponse({'en':rand_sentence, 'foreign':[swahili_0, swahili_1, swahili_2]})
 
 def get_es_right_verb(request):
     # provide verb tense
