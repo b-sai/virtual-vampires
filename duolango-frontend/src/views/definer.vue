@@ -1,13 +1,15 @@
 <template>
   <div>
-    
-   <p>Lang: {{global.lang}}</p>
+    <p>Define the word!</p>
+   <br>
     <button @click="startGame" v-if="!gameStarted" class="button">Start Game</button>
     <div v-else>
       <h1>{{ foreignWord }}</h1>
         <button v-for="(option, index) in translationOptions" :key="index" @click="checkTranslation(option)" :disabled="feedback == 'Correct!'" class="button">{{ option }}</button>
         <h2 >{{  feedback }}</h2>
     </div>
+    <br>
+    <p>Lang: {{global.lang}}</p>
   </div>
   
 </template>
@@ -36,7 +38,7 @@ export default {
         apiLink = "http://127.0.0.1:8000/rand_elem/"
       }
       else{
-        apiLink = "http://127.0.0.1:8000/rand_elem/" //CHANGE TO SWAHILI API
+        apiLink = "http://127.0.0.1:8000/rand_swah_elem/" //CHANGE TO SWAHILI API
       }
       var config = {
       method: 'get',
@@ -85,7 +87,7 @@ export default {
 
       const { data } = await makeApiRequest();
       englishWord.value = data.en;
-      foreignWord.value = data.sp;
+      foreignWord.value = data.foreign;
       selectedTranslation.value = '';
       
       // Generate three incorrect translation options
@@ -148,7 +150,7 @@ export default {
 .button {
   font-size: 24px;
   font-weight: bold;
-  background-color: #4CAF50;
+  background-color: #af4c4c;
   color: white;
   padding: 20px 32px;
   text-align: center;
