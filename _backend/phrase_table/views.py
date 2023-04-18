@@ -124,7 +124,7 @@ def get_swa_right_verb(request):
         if(len(feats) == 4):
             break
     #feats = get_feats(swa_word, sp, tense + ["PERF"], neg)
-    return JsonResponse({'sentence': feats[0].replace("+"+swa_word, " __________"),
+    return JsonResponse({'sentence': feats[0].replace("+"+swa_word, ""),
                          'verb': swa_word,
                          'correct': swahili_translations[0] ,
                          'wrong': swahili_translations[1:]},
