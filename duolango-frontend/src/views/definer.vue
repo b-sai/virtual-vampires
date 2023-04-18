@@ -9,7 +9,19 @@
         <h2 >{{  feedback }}</h2>
     </div>
     <br>
-    <p>Lang: {{global.lang}}</p>
+    <p>Language: {{global.lang}}</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <p>Struggling?</p>
+    <p>Here are some resources to help:</p>
+
+    <a href="https://www.swahilicheatsheet.com/" target="_blank">Swahili Cheat Sheet</a>
+    <br>
+    <br>
+    <a href="https://www.dummies.com/article/academics-the-arts/language-language-arts/learning-languages/spanish/spanish-verbs-for-dummies-cheat-sheet-209434/" target="_blank">Spanish Cheat Sheet</a>
   </div>
   
 </template>
@@ -150,7 +162,7 @@ export default {
 .button {
   font-size: 24px;
   font-weight: bold;
-  background-color: #af4c4c;
+  background-color: #3e8e41;
   color: white;
   padding: 20px 32px;
   text-align: center;
