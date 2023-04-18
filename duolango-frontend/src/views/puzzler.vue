@@ -1,9 +1,10 @@
 <template>
   <div>
+    <p>Lang: {{global.lang}}</p>
     <button @click="startGame" v-if="!gameStarted" class="button">Start Game</button>
     <div v-else>
       <h1>Translate: {{ sentence }}.</h1>
-      
+      <br>
       <div class="sequence-buttons">
         <button v-for="(word, index) in wordSequence" :key="index" @click="removeWord(index)" class="button sentence-word">{{ word }}</button>
         <hr>
@@ -21,8 +22,13 @@
 </template>
 
 <script>
-import { ref,computed } from 'vue';
+import { ref, getCurrentInstance } from 'vue';
 export default {
+  data() {
+        return {
+            myVar: this.globalVar
+        }
+    },
   name: 'Game',
   setup() {
     const gameStarted = ref(false);
@@ -32,12 +38,20 @@ export default {
     const selectedVerb = ref('');
     const correctSequence = ref([]);
     const feedback = ref('');
+    const { proxy } = getCurrentInstance();
 
     const makeApiRequest = () => {
       var axios = require('axios');
+      var apiLink = ('')
+      if (proxy.global.lang == "Spanish"){
+        apiLink = "http://127.0.0.1:8000/en_es_sent/"
+      }
+      else{
+        apiLink = "http://127.0.0.1:8000/en_es_sent/"
+      }
       var config = {
         method: 'get',
-        url: "http://127.0.0.1:8000/en_es_sent/",
+        url: apiLink,
         auth: {
           username: process.env.VUE_APP_username,
           password: process.env.VUE_APP_password,
@@ -57,9 +71,12 @@ export default {
       gameStarted.value = true;
 
       const { data } = await makeApiRequest();
+
       sentence.value = data.en;
       verbOptions.value = data.sp;
       correctSequence.value = [...data.sp];
+
+      
   
       shuffleArray(verbOptions.value);
     };

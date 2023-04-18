@@ -1,8 +1,9 @@
 <template>
   <div>
+    <p>Lang: {{global.lang}}</p>
     <button @click="startGame" v-if="!gameStarted" class="button">Start Game</button>
     <div v-else>
-      <h1>{{sentence}} (to {{ verb }}).</h1>
+      <h1>{{sentence}} ({{ verb }}).</h1>
       <button v-for="(option, index) in verbOptions" :key="index" @click="checkVerb(option)" :disabled="feedback == 'Correct!'" class="button">{{ option }}</button>
       
       <h2 v-if="selectedVerb !== ''">{{  feedback }}</h2>
@@ -11,8 +12,13 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, getCurrentInstance } from 'vue';
 export default {
+  data() {
+        return {
+            myVar: this.globalVar
+        }
+    },
     name: 'Game',
     setup() {
     const gameStarted = ref(false);
@@ -22,12 +28,21 @@ export default {
     const verbOptions = ref([]);
     const correct = ref('')
     const feedback = ref('')
+    const { proxy } = getCurrentInstance();
 
     const makeApiRequest = () => {
       var axios = require('axios');
+      var apiLink = ('')
+      if (proxy.global.lang == "Spanish"){
+        apiLink = "http://127.0.0.1:8000/en_es_verbs/"
+      } 
+      else {
+        apiLink = "http://127.0.0.1:8000/en_es_verbs/"
+      }
+
       var config = {
         method: 'get',
-        url: "http://127.0.0.1:8000/en_es_verbs/",
+        url: apiLink,
         auth: {
           username: process.env.VUE_APP_username,
           password: process.env.VUE_APP_password,
@@ -60,7 +75,7 @@ export default {
     if (verbOption === correct.value) {
       selectedVerb.value = verbOption;
       feedback.value = 'Correct!'
-      sentence.value = sentence.value.replace('____', correct.value);
+      sentence.value = sentence.value.replace('__________', correct.value);
       setTimeout(() => {
         startGame();
         feedback.value = '';
