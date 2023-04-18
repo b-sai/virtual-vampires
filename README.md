@@ -56,4 +56,4 @@ To run tests for sentence generators, run `python -m  backend_scripts.test_conve
 
 - `en_es_sent/` - API2: Provide a random sentence with a list of its correct spanish translation. `{"en": "I will jump", "sp": ["yo", "voluntad", "saltar"]}`
 
-
+- swahili versions of the previous apis - `rand_swa_elem/`, `en_swa_sent/`, `en_swa_verbs/`
