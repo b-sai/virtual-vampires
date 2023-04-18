@@ -21,9 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-#from .secrets import django_secret_key
-#SECRET_KEY = django_secret_key
-SECRET_KEY = "django-insecure-dr^lst@58$^8tp4lww#_qx5e_q6iw2s2=pfx5*m6ij-3uumjdl"
+from .secrets import django_secret_key
+SECRET_KEY = django_secret_key
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 

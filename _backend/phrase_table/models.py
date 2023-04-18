@@ -6,7 +6,6 @@ from django.db import models
 class MyVerb(models.Model):
     english = models.CharField(max_length=50)
     spanish = models.CharField(max_length=50)
-    swahili = models.CharField(max_length=50)
 
     def __str__(self):
         return self.english
@@ -15,7 +14,6 @@ class MyVerb(models.Model):
 class Pronoun(models.Model):
     english = models.CharField(max_length=50)
     spanish = models.CharField(max_length=50)
-    swahili = models.CharField(max_length=50)
 
     def __str__(self):
         return self.english
