@@ -1,13 +1,15 @@
 <template>
   <div>
-    
-   <p>Lang: {{global.lang}}</p>
+    <p>Define the word!</p>
+   <br>
     <button @click="startGame" v-if="!gameStarted" class="button">Start Game</button>
     <div v-else>
       <h1>{{ foreignWord }}</h1>
         <button v-for="(option, index) in translationOptions" :key="index" @click="checkTranslation(option)" :disabled="feedback == 'Correct!'" class="button">{{ option }}</button>
         <h2 >{{  feedback }}</h2>
     </div>
+    <br>
+    <p>Lang: {{global.lang}}</p>
   </div>
   
 </template>
@@ -85,7 +87,7 @@ export default {
 
       const { data } = await makeApiRequest();
       englishWord.value = data.en;
-      foreignWord.value = data.sp;
+      foreignWord.value = data.foreign;
       selectedTranslation.value = '';
       
       // Generate three incorrect translation options

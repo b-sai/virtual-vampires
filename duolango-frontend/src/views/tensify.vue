@@ -1,6 +1,7 @@
 <template>
   <div>
-    <p>Lang: {{global.lang}}</p>
+    <p>Choose the right tense!</p>
+    <br>
     <button @click="startGame" v-if="!gameStarted" class="button">Start Game</button>
     <div v-else>
       <h1>{{sentence}} ({{ verb }}).</h1>
@@ -8,6 +9,8 @@
       
       <h2 v-if="selectedVerb !== ''">{{  feedback }}</h2>
     </div>
+    <br>
+    <p>Lang: {{global.lang}}</p>
   </div>
 </template>
 
@@ -37,7 +40,7 @@ export default {
         apiLink = "http://127.0.0.1:8000/en_es_verbs/"
       } 
       else {
-        apiLink = "http://127.0.0.1:8000/en_es_verbs/"
+        apiLink = "http://127.0.0.1:8000/en_swa_verbs/"
       }
       var config = {
         method: 'get',

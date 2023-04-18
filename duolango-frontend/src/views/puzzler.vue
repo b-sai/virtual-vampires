@@ -1,9 +1,10 @@
 <template>
   <div>
-    <p>Lang: {{global.lang}}</p>
+    <p>Piece together the sentence (if Swahili, remember it's one word broken apart)!</p>
+    <br>
     <button @click="startGame" v-if="!gameStarted" class="button">Start Game</button>
     <div v-else>
-      <h1>Translate: {{ sentence }}.</h1>
+      <h1>Translate: {{ sentence }}</h1>
       <br>
       <div class="sequence-buttons">
         <button v-for="(word, index) in wordSequence" :key="index" @click="removeWord(index)" class="button sentence-word">{{ word }}</button>
@@ -18,6 +19,8 @@
       
       <h2>{{ feedback }}</h2>
     </div>
+    <p>Language: {{global.lang}}</p>
+    <br>
   </div>
 </template>
 
@@ -47,7 +50,7 @@ export default {
         apiLink = "http://127.0.0.1:8000/en_es_sent/"
       }
       else{
-        apiLink = "http://127.0.0.1:8000/en_es_sent/"
+        apiLink = "http://127.0.0.1:8000/en_swa_sent/"
       }
       var config = {
         method: 'get',
@@ -73,8 +76,8 @@ export default {
       const { data } = await makeApiRequest();
 
       sentence.value = data.en;
-      verbOptions.value = data.sp;
-      correctSequence.value = [...data.sp];
+      verbOptions.value = data.foreign;
+      correctSequence.value = [...data.foreign];
 
       
   

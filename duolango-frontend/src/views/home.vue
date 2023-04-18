@@ -5,7 +5,7 @@
     <ul class="activities">
       <li>Definer lets you learn verb vocab by choosing the correct definition.</li>
       <li>Tensify lets you choose the correct verb tense for the sentence.</li>
-      <li>Puzzler lets you piece together sentences.</li>
+      <li>Puzzler lets you piece together sentences (if learning Swahili, these sentences will be one word broken apart).</li>
     </ul>
     <p class="description">Games will be unlocked as you gain a foothold in your language of choice, first Definer all the way to Puzzler. This is because each game gives you a new part of the sentence to learn, allowing for growth by progressing through each game!</p>
 
