@@ -38,7 +38,7 @@ export default {
         apiLink = "http://127.0.0.1:8000/rand_elem/"
       }
       else{
-        apiLink = "http://127.0.0.1:8000/rand_elem/" //CHANGE TO SWAHILI API
+        apiLink = "http://127.0.0.1:8000/rand_swah_elem/" //CHANGE TO SWAHILI API
       }
       var config = {
       method: 'get',
@@ -150,7 +150,7 @@ export default {
 .button {
   font-size: 24px;
   font-weight: bold;
-  background-color: #4CAF50;
+  background-color: #af4c4c;
   color: white;
   padding: 20px 32px;
   text-align: center;
