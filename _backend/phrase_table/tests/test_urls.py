@@ -20,7 +20,7 @@ class TestUrls(TestCase):
             english=f"eng", spanish=f"spn")
 
         response = self.client.get('/rand_elem/')
-        self.assertEqual(literal_eval(response.content.decode("utf-8")), {'en': 'eng', 'sp': 'spn'})
+        self.assertEqual(literal_eval(response.content.decode("utf-8")), {'en': 'eng', 'foreign': 'spn'})
 
     def test_rand_elem_view_returns_OK_no_entries(self):
 
@@ -32,5 +32,5 @@ class TestUrls(TestCase):
     
         response = self.client.get('/rand_elem/')
         self.assertEqual(literal_eval(response.content.decode(
-            "utf-8")), {'en': 'Null', 'sp': 'Null'})
+            "utf-8")), {'en': 'Null', 'foreign': 'Null'})
 
