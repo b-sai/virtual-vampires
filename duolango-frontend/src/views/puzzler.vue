@@ -6,10 +6,13 @@
     <div v-else>
       <h1>Translate: {{ sentence }}</h1>
       <br>
+      
       <div class="sequence-buttons">
         <button v-for="(word, index) in wordSequence" :key="index" @click="removeWord(index)" class="button sentence-word">{{ word }}</button>
-        <hr>
+        
       </div>
+      
+      <hr style="width:40%">
      <div class="word-buttons">
       <button v-for="(option, index) in verbOptions" :key="index" @click="addWord(option)" 
               :disabled="isWordSelected(option)" class="button">{{ option }}</button>
@@ -21,6 +24,18 @@
     </div>
     <p>Language: {{global.lang}}</p>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <p>Struggling?</p>
+    <p>Here are some resources to help:</p>
+
+    <a href="https://www.swahilicheatsheet.com/" target="_blank">Swahili Cheat Sheet</a>
+    <br>
+    <br>
+    <a href="https://www.dummies.com/article/academics-the-arts/language-language-arts/learning-languages/spanish/spanish-verbs-for-dummies-cheat-sheet-209434/" target="_blank">Spanish Cheat Sheet</a>
   </div>
 </template>
 
