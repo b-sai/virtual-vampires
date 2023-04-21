@@ -1,0 +1,7 @@
+3s+PAST+kujifunza	(s)he learned	alijifunza
+NEG+2s+PAST+kuandika	you did not write	hukuandika
+1p+PAST+kufa	we died	tulikufa
+1s+PERF+kukosea	I have been wrong	nimekosea
+3s+PRES+kuchemsha	(s)he boils	anachemsha
+2s+FUT+kuuza	you will sell	utauza
+NEG+2p+FUT+kukodisha	ye will not rent	hamtakodisha

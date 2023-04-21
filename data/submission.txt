@@ -1,0 +1,7 @@
+3s+PAST+kujifunza
+NEG+2s+PAST+kuandika
+1p+PAST+kufa
+1s+PERF+kukosea
+3s+PRES+kuchemsha
+2s+FUT+kuuza
+NEG+2p+FUT+kukodisha
