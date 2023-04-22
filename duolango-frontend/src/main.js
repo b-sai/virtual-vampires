@@ -5,7 +5,8 @@ import store from './store'
 
 const app = createApp(App)
 app.config.globalProperties.global = {
-    lang: 'Spanish'
+    lang: 'Spanish',
+    score: 0
 }
 
 

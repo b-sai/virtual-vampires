@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="score-header">Score: {{global.score}}</div>
     <p>Piece together the sentence (if Swahili, remember it's one word broken apart)!</p>
     <br>
     <button @click="startGame" v-if="!gameStarted" class="button">Start Game</button>
@@ -42,11 +43,6 @@
 <script>
 import { ref, getCurrentInstance } from 'vue';
 export default {
-  data() {
-        return {
-            myVar: this.globalVar
-        }
-    },
   name: 'Game',
   setup() {
     const gameStarted = ref(false);
@@ -57,6 +53,7 @@ export default {
     const correctSequence = ref([]);
     const feedback = ref('');
     const { proxy } = getCurrentInstance();
+    const  buttonPressed = ref(false)
 
     const makeApiRequest = () => {
       var axios = require('axios');
@@ -113,14 +110,22 @@ export default {
       if (JSON.stringify(wordSequence.value) === JSON.stringify(correctSequence.value)) {
         
         feedback.value = 'Correct!';
+        if (!buttonPressed.value) {
+          proxy.global.score += 10
+          buttonPressed.value = true
+        }
         setTimeout(() => {
           startGame();
           wordSequence.value = [];
           feedback.value = '';
+          buttonPressed.value = false
         }, 1000);
       } else {
         feedback.value = 'Incorrect!';
-        
+        if (!buttonPressed.value) {
+         proxy.global.score -= 10
+         buttonPressed.value = true
+        }   
       }
     };
 
@@ -150,6 +155,16 @@ export default {
 </script>
 
 <style>
+.score-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  padding: 50px;
+  background-color: #fff;
+  z-index: 9999;
+}
+
 .button {
   font-size: 24px;
   font-weight: bold;

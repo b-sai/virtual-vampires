@@ -1,5 +1,7 @@
 <template>
+
   <div class="container">
+    <div class="score-header">Score:  {{global.score}}</div>
     <h1 class="title">Welcome to Duolango!</h1>
     <p class="subtitle">Our site provides three language learning activities:</p>
     <div class="activities">
@@ -67,6 +69,7 @@
     }
   }
 </script>
+
 <style>
   .container {
   max-width: 800px;
@@ -96,6 +99,17 @@
   flex-direction: column;
   align-items: center;
 }
+
+.score-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  padding: 50px;
+  background-color: #fff;
+  z-index: 9999;
+}
+
 
 .activities li {
   font-size: 18px;

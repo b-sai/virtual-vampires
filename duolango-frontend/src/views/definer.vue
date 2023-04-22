@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="score-header">Score: {{global.score}}</div>
     <p>Define the word!</p>
    <br>
     <button @click="startGame" v-if="!gameStarted" class="button">Start Game</button>
@@ -42,6 +43,7 @@ export default {
     const selectedTranslation = ref('');
     const translationOptions = ref([]);
     const feedback = ref('')
+    const  buttonPressed = ref(false)
 
     const makeApiRequest = () => {
       var axios = require('axios');
@@ -74,7 +76,7 @@ export default {
         apiLink = "http://127.0.0.1:8000/rand_elem/"
       }
       else{
-        apiLink = "http://127.0.0.1:8000/rand_elem/" //CHANGE TO SWAHILI API
+        apiLink = "http://127.0.0.1:8000/rand_swah_elem/" //CHANGE TO SWAHILI API
       }
       var config = {
         method: 'get',
@@ -120,17 +122,26 @@ export default {
     };
 
     const checkTranslation = (translation) => {
-      if (translation === englishWord.value) {
-        feedback.value = 'Correct!'
-        setTimeout(() => {
-        startGame();
-        feedback.value = '';
-      }, 1000);
-      } else {
-        feedback.value = 'Incorrect!'
-        selectedTranslation.value = translation;
-      }
-    };
+  if (translation === englishWord.value) {
+    feedback.value = 'Correct!'
+    if (!buttonPressed.value) {
+      proxy.global.score += 10
+      buttonPressed.value = true
+    }
+    setTimeout(() => {
+      startGame();
+      feedback.value = '';
+      buttonPressed.value = false
+    }, 1000);
+  } else {
+    feedback.value = 'Incorrect!'
+    if (!buttonPressed.value) {
+      proxy.global.score -= 10
+      buttonPressed.value = true
+    }
+    selectedTranslation.value = translation;
+  }
+};
 
     // Shuffle an array in place using the Fisher-Yates algorithm
     const shuffleArray = (array) => {
@@ -159,6 +170,15 @@ export default {
 </script>
 
 <style>
+.score-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  padding: 50px;
+  background-color: #fff;
+  z-index: 9999;
+}
 .button {
   font-size: 24px;
   font-weight: bold;
