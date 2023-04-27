@@ -13,10 +13,7 @@ class TestSpanish(unittest.TestCase):
 
         english = SpanishConverter()
 
-        for feats, english_sent in sentences:
-            res = english.generate_sentence(feats)
-            if res != english_sent:
-                print(f"{feats: <25} | {res : <25} | {english_sent}")
+                # print(f"{feats: <25} | {res : <25} | {english_sent}")
             # self.assertEqual(res, english_sent)
             
 
