@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="score-header">Score: {{global.score}}</div>
     <p>Choose the right tense!</p>
     <br>
     <button @click="startGame" v-if="!gameStarted" class="button">Start Game</button>
@@ -29,11 +30,6 @@
 <script>
 import { ref, getCurrentInstance } from 'vue';
 export default {
-  data() {
-        return {
-            myVar: this.globalVar
-        }
-    },
     name: 'Game',
     setup() {
     const gameStarted = ref(false);
@@ -44,6 +40,7 @@ export default {
     const correct = ref('')
     const feedback = ref('')
     const { proxy } = getCurrentInstance();
+    const  buttonPressed = ref(false)
 
     const makeApiRequest = () => {
       var axios = require('axios');
@@ -90,13 +87,22 @@ export default {
       selectedVerb.value = verbOption;
       feedback.value = 'Correct!'
       sentence.value = sentence.value.replace('__________', correct.value);
+      if (!buttonPressed.value) {
+          proxy.global.score += 10
+          buttonPressed.value = true
+        }
       setTimeout(() => {
         startGame();
         feedback.value = '';
+        buttonPressed.value = false
       }, 1000); // wait for 1 second before reloading the game and clearing the feedback
     } else {
       selectedVerb.value = verbOption;
       feedback.value = 'Incorrect!'
+      if (!buttonPressed.value) {
+        proxy.global.score -= 10
+        buttonPressed.value = true
+    }
     }
   };
 
@@ -126,6 +132,16 @@ export default {
 </script>
 
 <style>
+.score-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  padding: 50px;
+  background-color: #fff;
+  z-index: 9999;
+}
+
 .button {
   font-size: 24px;
   font-weight: bold;
