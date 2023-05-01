@@ -3,6 +3,8 @@ from . import test_english
 
 
 def suite():
+    print("TESTING IN SUITE ------------")
+
     test_loader = unittest.TestLoader()
     test_names = ['_backend.backend_scripts.test_converters.test_english',
                   '_backend.backend_scripts.test_converters.test_swahili',

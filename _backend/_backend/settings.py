@@ -24,6 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 from .secrets import django_secret_key
 SECRET_KEY = django_secret_key
 
+print("TESTING ------------")
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
