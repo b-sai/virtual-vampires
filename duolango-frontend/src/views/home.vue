@@ -1,7 +1,6 @@
 <template>
 
   <div class="container">
-    <div class="score-header">Score:  {{global.score}}</div>
     <h1 class="title">Welcome to Duolango!</h1>
     <p class="subtitle">Our site provides three language learning activities:</p>
     <div class="activities">
