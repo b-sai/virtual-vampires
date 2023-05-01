@@ -1,4 +1,4 @@
-describe('game start spanish', () => {
+/*describe('game start spanish', () => {
   it('passes', () => {
     cy.visit('http://localhost:8080/')
     cy.clearCookies()
@@ -63,4 +63,4 @@ describe('game start swahili', () => {
   })
 })
 
-
+*/

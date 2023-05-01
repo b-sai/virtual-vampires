@@ -124,7 +124,6 @@ export default {
       } else {
         feedback.value = 'Incorrect!';
         if (!buttonPressed.value) {
-         proxy.global.score -= 10
          buttonPressed.value = true
         }   
       }

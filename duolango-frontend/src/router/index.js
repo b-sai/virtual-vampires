@@ -78,7 +78,7 @@ router.beforeEach((to, from, next) => {
     myPromise.then(result => { if(result >= 50){
       next();
     }else{
-      alert('You need 50 points to unlock tensify....loser')
+      alert('You need 50 points to unlock Tensify')
     }}
       );
     return;
@@ -88,7 +88,7 @@ router.beforeEach((to, from, next) => {
     myPromise.then(result => { if(result >= 100){
       next();
     }else{
-      alert('You need 100 points to unlock tensify....sucker')
+      alert('You need 100 points to unlock Puzzler')
     }}
       );
     return;
