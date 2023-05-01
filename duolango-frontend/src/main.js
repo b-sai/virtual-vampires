@@ -27,7 +27,7 @@ app.config.globalProperties.globalLang = {
                    setDoc(doc(db, 'users', auth.currentUser.uid),{swahili_score:docSnap.data().swahili_score, spanish_score:app.config.globalProperties.global.score, current_languge:"Spanish"})
                 }else{
                     app.config.globalProperties.global.score = docSnap.data().swahili_score
-                    setDoc(doc(db, 'users', auth.currentUser.uid),{swahili_score:docSnap.data().swahili_score, spanish_score:app.config.globalProperties.global.score, current_languge:"Swahili"})
+                    setDoc(doc(db, 'users', auth.currentUser.uid),{swahili_score:app.config.globalProperties.global.score, spanish_score:docSnap.data().spanish_score, current_languge:"Swahili"})
                     }
             }else{
                 await setDoc(doc(db, 'users', auth.currentUser.uid),{swahili_score:0, spanish_score:0, current_languge:"None"})
@@ -57,9 +57,7 @@ app.config.globalProperties.globalLang = {
             app.config.globalProperties.global.lang = 'Spanish'
             //console.log(app.config.globalProperties.global.lang)
         }
-        if(num ==0){
-            return app.config.globalProperties.global.lang
-        }
+        
         if (num > 1){
             app.config.globalProperties.global.lang = 'Swahili'
         }
