@@ -1,9 +1,10 @@
 import unittest
 from . import test_english
-
+import os
 
 def suite():
     print("TESTING IN SUITE ------------")
+    print(os.environ["DEMO"], "--**")
 
     test_loader = unittest.TestLoader()
     test_names = ['_backend.backend_scripts.test_converters.test_english',
