@@ -36,7 +36,7 @@ run:
 `python manage.py runserver`
 
 ### Testing
-To run tests for sentence generators, run `python -m  backend_scripts.test_converters.test_all` from the root directory. To run tests for a specific language, run `python -m unittest backend_scripts.test_converters.test_english` (for example).
+To run tests for sentence generators, run `python -m  _backend.backend_scripts.test_converters.test_all` from the root directory. To run tests for a specific language, run `python -m _backend.backend_scripts.test_converters.test_english` (for example).
 
 #### Django APIs:
 
