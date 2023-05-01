@@ -39,6 +39,8 @@ jobs:
     - name: Set Env
       run: |
         echo "${{ secrets.DJANGO_SECRET_KEY2 }}" | base64 -d > _backend/_backend/secrets.py
+        echo "${{ secrets.ENV_FILE }}" > duolango-frontend/.env
+
     - name: Launch Django server
       run: |
            cd _backend 
