@@ -126,6 +126,7 @@ export default {
     feedback.value = 'Correct!'
     if (!buttonPressed.value) {
       proxy.global.score += 10
+      proxy.globalLang.score_update()
       buttonPressed.value = true
     }
     setTimeout(() => {
@@ -136,7 +137,6 @@ export default {
   } else {
     feedback.value = 'Incorrect!'
     if (!buttonPressed.value) {
-      proxy.global.score -= 10
       buttonPressed.value = true
     }
     selectedTranslation.value = translation;
