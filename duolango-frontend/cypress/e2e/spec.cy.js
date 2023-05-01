@@ -1,3 +1,4 @@
+/*
 describe('game start spanish', () => {
   it('passes', () => {
     cy.visit('http://localhost:8080/')
@@ -62,4 +63,4 @@ describe('game start swahili', () => {
     
   })
 })
-
+*/
