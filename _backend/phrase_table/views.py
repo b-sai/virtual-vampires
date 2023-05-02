@@ -19,6 +19,9 @@ logger = logging.getLogger('django')
 sp = ["1s", "2s", "3s", "1p", "2p", "3p"]
 tense = ["PAST", "FUT", "IMP", "PRES"]
 neg = ["NEG+", ""]
+full_sp =  {"1s":"First Person Singular", "2s":"Second Person Singular", "3s":"Third Person Singular", "1p":"First Person Plural", "2p":"Second Person Plural", "3p":"Third Person Plural"}
+full_tense = {"PAST": "Past", "FUT":"Future", "IMP":"Imperfect", "PRES":"Present", "PERF":"Perfect"}
+
 class VerbViewSet(viewsets.ModelViewSet):
     queryset = MyVerb.objects.all()
     serializer_class = VerbSerializer
@@ -32,7 +35,20 @@ class PronounViewSet(viewsets.ModelViewSet):
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
  
- 
+
+def swahili_feats_readable(feat):
+    feats = feat.split("+")
+    verb = feats[-1]
+    if feats[0] == "NEG":
+        sp = feats[1]
+        tense = feats[2]
+        is_neg = True
+        return ("(Negation)" + full_sp[sp] + " in " + full_tense[tense] + " tense")
+    else:
+        sp = feats[0]
+        tense = feats[1]
+        is_neg = False
+        return (full_sp[sp] + " in " + full_tense[tense] + " tense")
 def get_random_verb_pair(request):
     items = list(MyVerb.objects.all())
     if len(items) > 0:
@@ -124,7 +140,7 @@ def get_swa_right_verb(request):
         if(len(feats) == 4):
             break
     #feats = get_feats(swa_word, sp, tense + ["PERF"], neg)
-    return JsonResponse({'sentence': feats[0].replace("+"+swa_word, ""),
+    return JsonResponse({'sentence': swahili_feats_readable(feats[0]),
                          'verb': swa_word,
                          'correct': swahili_translations[0] ,
                          'wrong': swahili_translations[1:]},
