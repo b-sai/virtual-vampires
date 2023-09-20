@@ -1,12 +1,12 @@
 <template>
-    <div id="nav" v-if="$store.state.user">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/definer">Definer</router-link> |
-      <router-link to="/tensify">Tensify</router-link> |
-      <router-link to="/puzzler">Puzzler</router-link> |
-      <button id="buttons" @click="$store.dispatch('logout')">Logout</button>
-    </div>
-  <router-view/>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/definer">Definer</router-link> |
+    <router-link to="/tensify">Tensify</router-link> |
+    <router-link to="/puzzler">Puzzler</router-link> |
+    <!-- <button id="buttons" @click="$store.dispatch('logout')">Logout</button> -->
+  </div>
+  <router-view />
 </template>
 
 
@@ -17,12 +17,8 @@ import { onBeforeMount } from 'vue'
 import {useStore} from 'vuex'
 
 export default {
-  setup () {
+  setup() {
     const store = useStore()
-
-    onBeforeMount(() => {
-      store.dispatch('fetchUser')
-    })
   }
 }
 // export default defineComponent({

@@ -10,7 +10,7 @@ import { getAuth } from "firebase/auth";
 
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig)
-const auth = getAuth(app)
+// const app = initializeApp(firebaseConfig)
+// const auth = getAuth(app)
 
-export { auth }
+// export { auth }
