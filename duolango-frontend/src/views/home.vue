@@ -41,11 +41,12 @@
       <button class="button" @click="switchToSpanish">Spanish</button>
       <button class="button" @click="switchToSwahili">Swahili</button>
     </div>
-    <p class="selected-language">Selected Language: {{ getSelectedLanguage() }}</p>
+      <p class="selected-language">Selected Language: {{ globalLang.changeLang(switchValue) }}</p>
 
       <p class="have-fun">Have fun!</p>
   </div>
 </template>
+
 
 <script>
 import { ref } from 'vue';
@@ -62,25 +63,13 @@ export default {
       switchValue.value = 2;
     }
 
-    function getSelectedLanguage() {
-      switch (switchValue.value) {
-        case 1:
-          return 'Spanish';
-        case 2:
-          return 'Swahili';
-        default:
-          return 'None';
-      }
-    }
-
     return {
       switchValue,
       switchToSpanish,
-      switchToSwahili,
-      getSelectedLanguage,
-    };
-  },
-};
+      switchToSwahili
+    }
+  }
+}
 </script>
 
 <style>
